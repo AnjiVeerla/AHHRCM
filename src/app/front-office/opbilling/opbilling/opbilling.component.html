@@ -1,0 +1,867 @@
+<!--Container-->
+<div class="container-fluid mt-3 ">
+    <div class="row">
+        <div class="col-xl-12 container-fluid" >
+            <div class="container__wrapper" >
+                <form [formGroup]="opBillingform" >
+            <div class="page-header sticky-top">
+                <h2 class="page-heading" translate>Out Patient Billing</h2>
+                <div class="actions ms-auto">
+                    <button class="btn py-0 px-1 btn-sm" data-bs-toggle="modal" data-bs-target="#employeeInfo"><img src="assets/images/icons/icon-info.svg" width="28px" alt="" translate></button>
+                    <button class="btn btn-main-outline" (click)="navigateToRegistration()" translate>Registration</button>
+                    <button class="btn btn-main-outline" translate>Print</button>
+                    <button class="btn btn-main-outline" translate (click)="clearScreen()">Clear</button>
+                    <button class="btn btn-main-fill" (click)="saveBillDetails()" translate>Save</button>
+                </div>
+            </div>
+            <div class="container-body">
+                <div class="row gx-2">
+                    <div class="col-md-6">
+                        <div class="card card-style-2 h-100">
+                            <div class="card-body">
+                                <div class="row gy-3">
+                                    <div class="col-lg-12">
+                                        <div class="info-details">
+                                            <p class="label" translate>Patient Name:</p>
+                                            <p>{{patientName}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="info-details">
+                                            <p class="label" translate>Nationality:</p>
+                                            <p>{{nationality}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="info-details">
+                                            <p class="label" translate>National ID:</p>
+                                            <p>{{nationalId}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="info-details">
+                                            <p class="label" translate>Mobile No:</p>
+                                            <p>{{mobileNo}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="info-details">
+                                            <p class="label" translate>Age:</p>
+                                            <p>{{age}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="info-details">
+                                            <p class="label" translate>Gender:</p>
+                                            <p>{{gender}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="info-details">
+                                            <p class="label" translate>Marital Status:</p>
+                                            <p>{{maritalStatus}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 "> 
+                                        <p class="d-flex align-items-center mt-1 mb-0 text-danger" translate>
+                                            <span class="pe-1 pb-1">
+                                                <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <!-- <path d="M3 0.5L3.88168 2.28647L5.85317 2.57295L4.42658 3.96353L4.76336 5.92705L3 5L1.23664 5.92705L1.57342 3.96353L0.146831 2.57295L2.11832 2.28647L3 0.5Z" fill="#EB6247"/> -->
+                                                </svg>
+                                            </span>
+                                            <!-- Patient card is going to Expire in 8 days. -->
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-style-2 h-100">
+                            <div class="card-body">
+                                <div class="row gy-3 align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="info-details">
+                                            <p class="label" translate>Referred Doctor :</p>
+                                            <p translate></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="d-flex align-items-center justify-content-end">
+                                            <p for="" class="label mb-0" translate>Bill Type:</p>
+                                            <div class="toggle__switch switch-sm ms-2">
+                                                <button class="btn selected" translate>Cash</button>
+                                                <button class="btn" translate>Credit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sub-header">
+                                    <h4 class="title" translate>Payer Details</h4>
+                                    <div class="action__btns">
+                                        <button class="btn btn-main-outline" translate>View Approvals</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <label for="" class="form-label" translate>Payer</label>
+                                            <div class="input-group col">
+                                                <input type="text" class="form-control" placeholder="{{'Payer Details'| translate}}" aria-label="Country Name">
+                                                <button class="btn btn-secondary-fill btn-icon" type="button" id="button-addon2">
+                                                    <img src="assets/images/icons/icon-search.svg" alt="">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <label for="" class="form-label" translate>Grade</label>
+                                            <div class="input-group col">
+                                                <input type="text" class="form-control" placeholder="{{'Grade Search' |translate}}" aria-label="Country Name">
+                                                <button class="btn btn-secondary-fill btn-icon" type="button" id="button-addon2">
+                                                    <img src="assets/images/icons/icon-search.svg" alt="">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2 gx-0">
+                    <div class="col-lg-7">
+                        <div class="card card-style-1 border-right-radius-0 h-100">
+                            <div class="card-header">
+                                <h3 class="heading" translate>Services</h3>
+                                <div class="action__btns">
+                                    <div class="form-check form-check-inline mx-2">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="routine" value="optionroutine">
+                                        <label class="form-check-label" for="routine" translate>Routine</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mx-2 ms-5 ms-lg-2">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="asap" value="optionasap">
+                                        <label class="form-check-label" for="asap" translate>ASAP</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mx-2 ms-5 ms-lg-2">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="sap" value="optionsap">
+                                        <label class="form-check-label" for="sap" translate>SAP</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="row p-2 gx-3">
+                                    <div class="col-xl-4">
+                                        <select class="form-select" formControlName="ServiceID" (change)="onServiceChange($event)">
+                                            <option value="" selected translate>Select Service</option>
+                                            <option *ngFor="let Service of Services" [ngValue]="Service.ServiceID">
+                                                {{this.lang == 'ar' ? Service.ServiceName2L : Service.ServiceName}}</option>
+                                        </select>
+                                        <!-- <select name="" class="form-select" id="" formControlName="ServiceID" (change)="onServiceChange($event)">
+                                            <option value="" translate selected>Select</option>
+                                            <option *ngFor="let Service of Services" [ngValue]="Service.ServiceID">
+                                                {{this.lang == 'ar' ? Service.ServiceName2L : Service.ServiceName}}</option>
+                                        </select> -->
+                                        <span class="text-danger"
+                                        *ngIf="(isFormSubmitted && this.opBillingform.get('ServiceID')?.errors) || (!this.opBillingform.get('ServiceID')?.pristine && this.opBillingform.get('ServiceID')?.invalid)">
+                                        <div *ngIf="this.opBillingform.get('ServiceID')?.errors?.['required']"
+                                            translate>Service is required</div>
+                                        </span>
+                                    </div>
+                                    <div class="col-xl-3">
+                                        <div class="input-group">
+                                            <!-- <input type="text" class="form-control" placeholder="{{'Service Type' |translate}}" aria-label="Country Name">
+                                            <button class="btn btn-secondary-fill btn-icon" type="button" id="button-addon2">
+                                                <img src="assets/images/icons/icon-search.svg" alt="">
+                                            </button> -->
+                                            <input type="text" class="form-control" placeholder="{{'Service Type' |translate}}"
+                                                formControlName="ServiceTypeID" [matAutocomplete]="auto"
+                                                (keyup)="searchServiceType($event)">
+                                            <button class="btn btn-secondary-fill btn-icon" type="button"
+                                                id="button-addon2">
+                                                <img src="assets/images/icons/icon-search.svg" alt="">
+                                            </button> 
+                                            <mat-autocomplete #auto="matAutocomplete">
+                                                <mat-option *ngFor="let serviceType of serviceTypeList"
+                                                    (onSelectionChange)="onSelectServiceType(serviceType)" [value]="serviceType.ConsultantName.trim()">
+                                                    {{serviceType.ConsultantName}}
+                                                </mat-option>
+                                            </mat-autocomplete> 
+                                            <span class="text-danger"
+                                            *ngIf="(isFormSubmitted && this.opBillingform.get('ServiceTypeID')?.errors) || (!this.opBillingform.get('ServiceTypeID')?.pristine && this.opBillingform.get('ServiceTypeID')?.invalid)">
+                                            <div *ngIf="this.opBillingform.get('ServiceTypeID')?.errors?.['required']"
+                                                translate>Service Type is required</div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-5">
+                                        <div class="d-flex">
+                                            <button class="btn btn-main-outline mx-2" translate>Edit Other Orders</button>
+                                            <button class="btn btn-main-outline mx-2" translate>Dr.Availability</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="table-responsive pb-3">
+                                    <table class="table border-start-0 border-end-0">
+                                        <thead>
+                                            <tr>
+                                                <th translate>Sl No.</th>
+                                                <th translate>Service</th>
+                                                <th translate>Procedures / Consultants</th>
+                                                <th translate>Visit Type</th>
+                                                <th translate>QTY</th>
+                                                <th translate>Price</th>
+                                                <th translate>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let type of servicesTypeNameList;let i=index">
+                                                <td>{{ i+1 }}</td>
+                                                <td>{{type.ServiceName}}</td>
+                                                <td>{{type.Procedure}}</td>
+                                                <td>New Visit</td>
+                                                <td>1</td>
+                                                <td>{{type.BillablePrice}}</td>
+                                                <td>
+                                                    <button class="btn btn-danger-outline" translate (click)="removeItem(i);">Delete</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="card card-style-1 border-left-radius-0 border-left-0 h-100">
+                            <div class="card-header">
+                                <h3 class="heading" translate>Payment Details</h3>
+                                <div class="action__btns">
+                                    <button class="btn btn-main-outline" translate>Bill Breakup</button>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <!-- Accordion-->
+                                <div class="accordion" id="patientEligibility">
+                                    <!-- Eligibility Accordion-->
+                                    <div class="accordion-item border-0 border-bottom border-radius-0">
+                                        <div class="accordion-heading px-2 ">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="user-details px-1 d-flex align-items-center">
+                                                    <p class="label-heading mb-0" translate>Bill Amount:</p>
+                                                    <h2 class="rounded-pill mb-0 ms-2">{{billAmount}}</h2>
+                                                </div>
+                                                <div class="user-details px-1 d-flex align-items-center">
+                                                    <p class="label-heading mb-0" translate>VAT :</p>
+                                                    <h2 class="rounded-pill mb-0 ms-2">{{VAT}}</h2>
+                                                </div>
+                                                <div class="d-flex align-items-center px-1">
+                                                    <button class="toggle-arrow collapsed p-0" data-bs-toggle="collapse" data-bs-target="#eligibleCheck" aria-expanded="true" aria-controls="eligibleCheck">
+                                                        <img src="assets/images/icons/icon-arrow-down.svg" alt="">
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="eligibleCheck" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#patientEligibility">
+                                            <div class="accordion-body p-0  ">
+                                                <div class="table-responsive">
+                                                    <table class="table border-start-0 border-end-0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th translate>Description</th>
+                                                                <th translate>Amount</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td translate>Payer Amount</td>
+                                                                <td>{{payerAmount}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td translate>Discount Amount</td>
+                                                                <td>{{discountAmount}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td translate>VAT</td>
+                                                                <td>{{VAT}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td translate>Deposit Amount</td>
+                                                                <td>{{depositAmount}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td translate>Refund Amount</td>
+                                                                <td>{{refundAmount}}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--discount-block-->
+                                <div class="card-box">
+                                    <div class="row gx-3 align-items-center">
+                                        <div class="col-xl-5">
+                                            <div class="input-group">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M18.9621 11.8876C19.4476 11.3719 20 10.786 20 9.99927C20 9.21248 19.4476 8.62661 18.9621 8.11095C18.6876 7.81637 18.3997 7.51506 18.3227 7.27397C18.239 7.01286 18.2926 6.58093 18.3462 6.16586C18.4332 5.47282 18.5336 4.68948 18.0918 4.07667C17.6431 3.45728 16.8666 3.30994 16.1802 3.17946C15.7752 3.10249 15.3567 3.02208 15.1456 2.86814C14.938 2.71419 14.7372 2.34249 14.5397 1.98091C14.2049 1.35827 13.8232 0.655208 13.0901 0.414118C12.3803 0.183049 11.6772 0.517843 11.0546 0.81258C10.6729 0.99343 10.2778 1.18085 10 1.18085C9.72218 1.18085 9.32368 0.99343 8.94542 0.81258C8.32278 0.514552 7.61627 0.179763 6.90991 0.414118C6.17666 0.6552 5.79507 1.35827 5.46028 1.98091C5.26613 2.34246 5.06526 2.71417 4.85436 2.86814C4.64003 3.02552 4.22498 3.10249 3.81979 3.17946C3.13344 3.31009 2.35672 3.45731 1.90817 4.07667C1.46621 4.68933 1.56337 5.47278 1.65379 6.16586C1.7073 6.58108 1.76096 7.01287 1.67726 7.27397C1.60029 7.51161 1.31571 7.81637 1.03786 8.11095C0.55239 8.62661 0 9.21248 0 9.99927C0 10.786 0.552428 11.3719 1.03786 11.8876C1.31242 12.1822 1.60027 12.4835 1.67726 12.7246C1.76096 12.9857 1.70745 13.4176 1.65379 13.8327C1.56681 14.5257 1.46637 15.3091 1.90817 15.9219C2.35687 16.5412 3.13344 16.6886 3.81979 16.8191C4.22483 16.896 4.6433 16.9765 4.85436 17.1304C5.06196 17.2843 5.26284 17.656 5.46028 18.0176C5.79507 18.6403 6.17681 19.3433 6.90991 19.5844C7.61971 19.8155 8.32278 19.4807 8.94542 19.186C9.32715 19.0051 9.72218 18.8177 10 18.8177C10.2778 18.8177 10.6763 19.0051 11.0546 19.186C11.53 19.4136 12.059 19.6647 12.5946 19.6647C12.7587 19.6647 12.9227 19.6412 13.0901 19.5877C13.8233 19.3466 14.2049 18.6436 14.5397 18.0209C14.7339 17.6594 14.9347 17.2877 15.1456 17.1337C15.36 16.9763 15.775 16.8993 16.1802 16.8224C16.8666 16.6917 17.6433 16.5445 18.0918 15.9252C18.5338 15.3125 18.4366 14.5291 18.3462 13.836C18.2927 13.4208 18.239 12.989 18.3227 12.7279C18.3997 12.4868 18.6843 12.1822 18.9621 11.8876V11.8876ZM5.30945 7.26054C5.30945 6.15243 6.2101 5.25178 7.31821 5.25178C8.42632 5.25178 9.32697 6.15243 9.32697 7.26054C9.32697 8.36865 8.42632 9.2693 7.31821 9.2693C6.2101 9.2693 5.30945 8.36865 5.30945 7.26054ZM6.6854 14.1975C6.55476 14.3281 6.38408 14.3951 6.21339 14.3951C6.04271 14.3951 5.87187 14.3281 5.74139 14.1975C5.48028 13.9364 5.48028 13.5111 5.74139 13.25L13.3112 5.67679C13.5723 5.41569 13.9975 5.41569 14.2586 5.67679C14.5197 5.9379 14.5197 6.36314 14.2586 6.62424L6.6854 14.1975ZM12.6749 14.626C11.5668 14.626 10.6662 13.7253 10.6662 12.6172C10.6662 11.5091 11.5668 10.6084 12.6749 10.6084C13.7831 10.6084 14.6837 11.5091 14.6837 12.6172C14.6837 13.7253 13.7831 14.626 12.6749 14.626Z" fill="#ECF6F8"/>
+                                                    </svg>
+                                                </span>
+                                                <input type="text" class="form-control" placeholder="{{'discount'| translate}}" aria-label="Username" aria-describedby="basic-addon1" style="border-color:#8ECBD7">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-5">
+                                            <select name="" id="" class="form-select">
+                                                <option value="" selected translate> Authorised By</option>
+                                                <!-- <option value="">Name 1</option> -->
+                                            </select>
+                                        </div>
+                                        <div class="col-xl-2">
+                                            <button class="btn btn-main-outline" translate>Apply</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Payment details-->
+                                <div class="row g-2 p-2 align-items-end">
+                                    <div class="col-xl-4">
+                                        <label class="form-label" for="" required translate>Collected</label>
+                                        <input type="text" class="form-control" placeholder="{{'Collected' |translate}}">
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <label for=""  class="form-label" required translate>Mode of Payment</label>
+                                        <select name="" #mode id="" class="form-select" (change)="selectModeOfPayment(mode.value)">
+                                            <option value="0"  translate>Select</option>
+                                            <option value="1" selected>Cash</option>
+                                            <option value="2">Cheque</option>
+                                            <option value="3">Credit Card</option>
+                                            <option value="4">Debit Card</option>
+                                            <option value="5">Demand Draft</option>
+                                            <option value="6">NEFT</option>
+                                            <option value="7">Online Payment</option>
+                                            <option value="8">Voucher</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <label class="form-label" for="" required translate>Amount</label>
+                                        <input type="text" class="form-control" value="{{billAmount}}" placeholder="{{'Collected' |translate}}">
+                                    </div>
+                                    <div class="col-xl-10">
+                                        <label class="form-label" for="" required translate>Amount in words</label>
+                                        <input type="text" class="form-control" placeholder="{{'Amount in words' |translate}}">
+                                    </div>
+                                    <div class="col-xl-2">
+                                        <button class="btn btn-main-outline align-self-center">ok</button>
+                                    </div>
+                                    <div class="col-xl-9">
+                                        <label class="form-label" for="" required translate>Remarks</label>
+                                        <input type="text" class="form-control" placeholder="{{'Remarks' |translate}}">
+                                    </div>
+                                    <div class="col-xl-3">
+                                        <label class="form-label" for="" required translate>Claim for No.</label>
+                                        <input type="text" class="form-control" placeholder="No.">
+                                    </div>
+                                </div>
+
+                                <!-- Payment type details-->
+                                <!-- Payment type details-->
+                                <div class="card card-style-1 m-2 bg-color-1" [ngStyle]="{'display':displayCreditCardInfo}">
+                                    <div class="card-body p-2">
+                                        <h3 class="heading" translate>{{CreditCardText}}</h3>
+                                        <div class="row g-2 align-items-end">
+                                            <div class="col-xl-6">
+                                                <label class="form-label" for="" required translate>Card#</label>
+                                                <input type="text" class="form-control" placeholder="" value="">
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <label for=""  class="form-label" required translate>Approval</label>
+                                                <input type="text" class="form-control" placeholder="" value="">
+                                            </div>
+                                            <div class="col-xl-4">
+                                                <label class="form-label" for="" required translate>Credit Holder</label>
+                                                <input type="text" class="form-control" placeholder="Branch">
+                                            </div>
+                                            <div class="col-xl-4">
+                                                <label class="form-label" for="" required translate>EDC Machine</label>
+                                                <select name="" id=""></select>
+                                            </div>
+                                            <div class="col-xl-4">
+                                                <label class="form-label" for="" required translate>Card Type</label>
+                                                <option value="" class="form-select">
+                                                    <select name="" id=""></select>
+                                                </option>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+    </div>
+            
+</div>
+
+    </div>
+</div>
+
+<!-- Modal for Doctor Availability-->
+<div class="modal" tabindex="-1" id="doctorAvailability"  tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" translate>Doctor Availability Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         <div class="row g-3">
+            <div class="col-lg-5">
+                <div class="d-flex align-items-center">
+                    <label for="" class="form-label mb-0 px-2 col-md-3 col-lg-4">Specialization</label>
+                    <select name="" id="" class="form-select">
+                        <option value="">select</option>
+                        <option value="">option-1</option>
+                        <option value="">option-2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-5 ">
+                <div class="d-flex align-items-center">
+                    <label for="" class="form-label mb-0 px-2 col-md-3 col-lg">Doctor</label>
+                    <select name="" id="" class="form-select">
+                        <option value="">select</option>
+                        <option value="">option-1</option>
+                        <option value="">option-2</option>
+                    </select>
+                </div>
+            </div>
+         </div>
+         <div class="row my-3 g-3">
+            <div class="col-xl-4 col-lg-6">
+                <div class="availability__card selected">
+                    <div class="info">
+                        <p class="label">Doctor</p>
+                        <p>Doctor Name</p>
+                    </div>
+                    <div class="info">
+                        <p class="label">Specialisation</p>
+                        <p>Specialisation</p>
+                    </div>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <p class="label">Avl Slots</p>
+                            <p>20</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Billed</p>
+                            <p>10</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Waiting</p>
+                            <p>05</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6">
+                <div class="availability__card">
+                    <div class="info">
+                        <p class="label">Doctor</p>
+                        <p>Doctor Name</p>
+                    </div>
+                    <div class="info">
+                        <p class="label">Specialisation</p>
+                        <p>Specialisation</p>
+                    </div>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <p class="label">Avl Slots</p>
+                            <p>20</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Billed</p>
+                            <p>10</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Waiting</p>
+                            <p>05</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6">
+                <div class="availability__card">
+                    <div class="info">
+                        <p class="label">Doctor</p>
+                        <p>Doctor Name</p>
+                    </div>
+                    <div class="info">
+                        <p class="label">Specialisation</p>
+                        <p>Specialisation</p>
+                    </div>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <p class="label">Avl Slots</p>
+                            <p>20</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Billed</p>
+                            <p>10</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Waiting</p>
+                            <p>05</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row-->
+            <div class="col-xl-4 col-lg-6">
+                <div class="availability__card">
+                    <div class="info">
+                        <p class="label">Doctor</p>
+                        <p>Doctor Name</p>
+                    </div>
+                    <div class="info">
+                        <p class="label">Specialisation</p>
+                        <p>Specialisation</p>
+                    </div>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <p class="label">Avl Slots</p>
+                            <p>20</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Billed</p>
+                            <p>10</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Waiting</p>
+                            <p>05</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6">
+                <div class="availability__card">
+                    <div class="info">
+                        <p class="label">Doctor</p>
+                        <p>Doctor Name</p>
+                    </div>
+                    <div class="info">
+                        <p class="label">Specialisation</p>
+                        <p>Specialisation</p>
+                    </div>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <p class="label">Avl Slots</p>
+                            <p>20</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Billed</p>
+                            <p>10</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Waiting</p>
+                            <p>05</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6">
+                <div class="availability__card">
+                    <div class="info">
+                        <p class="label">Doctor</p>
+                        <p>Doctor Name</p>
+                    </div>
+                    <div class="info">
+                        <p class="label">Specialisation</p>
+                        <p>Specialisation</p>
+                    </div>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <p class="label">Avl Slots</p>
+                            <p>20</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Billed</p>
+                            <p>10</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="label">Waiting</p>
+                            <p>05</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger-outline" data-bs-dismiss="modal" >Close</button>
+          <button type="button" class="btn btn-main-outline" data-bs-toggle="modal" href="#reviewAndPayment" >Review & Make Payment</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Review and Paymemnt-->
+<div class="modal" tabindex="-1" id="reviewAndPayment"  tabindex="-1">
+    <div class="modal-dialog modal-dialog-scrollable ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Review & Make Payment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+            <div class="card__dashed mb-4">
+                <h5 class="heading">Patient Details:</h5>
+                <p>Mr.Muhammad Ali</p>
+                <p><span class="clr-grey">Age: </span>37 Years</p>
+                <p class="mb-0"><span class="clr-grey">UHID: </span>3324324254354325</p>
+            </div>
+            <div class="card__dashed">
+                <h5 class="heading">Appointment With:</h5>
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <div class="img-rounded mx-auto">
+                            <img src="assets/images/patient-dp.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <p class="mb-2">Dr. Rahman</p>
+                        <p>Cardiologist</p>
+                        <p><span class="clr-grey">Date :</span> 02/06/2022</p>
+                        <p class="mb-0"><span class="clr-grey">Time: </span>09:00 AM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger-outline"  data-bs-toggle="modal" href="#doctorAvailability">Cancel</button>
+          <button type="button" class="btn btn-main-outline" data-bs-dismiss="modal" >Pay Later </button>
+          <button class="btn btn-main-outline">Make Payment</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- Modal for Employee Info-->
+<div class="modal" tabindex="-1" id="employeeInfo">
+    <div class="modal-dialog modal-dialog-scrollabel modal-lg ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Employee Info</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <h4>employee details</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger-outline" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Main Menu-->
+<div class="modal fade" id="mainMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollabel">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="row px-4 pt-3">
+            <div class="col-lg-8 ms-auto">
+                <div class="d-flex align-items-center">
+                    <label for="" class="form-label mb-0 px-2">Facility</label>
+                    <select name="" id="" class="form-select">
+                        <option value="">select</option>
+                        <option value="">option-1</option>
+                        <option value="">option-2</option>
+                    </select>
+                </div>
+            </div>
+         </div>
+
+        <div class="modal-body m-4">
+            <div class="accordion accordion-menu" id="facilityList">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="facilityName1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ficility1" aria-expanded="true" aria-controls="ficility1">
+                        Administration
+                    </button>
+                  </h2>
+                  <div id="ficility1" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <a href="#" class="active">Organization Master</a>
+                      <a href="#">Password Change</a>
+                      <a href="#">User Creation</a>
+                      <a href="#">User Role Mapping</a>
+                      <a href="#">Role Feature Mapping</a>
+                      <a href="#">Password Configurations</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="facilityName2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ficility2" aria-expanded="false" aria-controls="ficility2">
+                      Registration
+                    </button>
+                  </h2>
+                  <div id="ficility2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <a href="#">Patient Registration</a>
+                        <a href="#">Arab-Eng Names Disctionary</a>
+                        <a href="#">Merge UHID</a>
+                        <a href="#">Patient Finder</a>
+                        <a href="#">Check Eligibility</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="facilityName3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ficility3" aria-expanded="false" aria-controls="ficility3">
+                      Contract Management
+                    </button>
+                  </h2>
+                  <div id="ficility3" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <a href="#">Company Master</a>
+                        <a href="#">Agreement</a>
+                        <a href="#">Coverage Group</a>
+                        <a href="#">Price List</a>
+                        <a href="#">Op Package Deal Designer</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!--Toast Modal-->
+<div class="modal fade" data-bs-backdrop="static" id="saveMessage" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-toast modal-toast-success">
+      <div class="modal-content">
+            
+        <img class="modal-header-icon" src="assets/images/icons/toast-success.svg" alt=""> 
+        <div class="modal-body">
+                <h3>Thank You!</h3> 
+                <p>
+                    your details has been successfully submitted. Thanks!
+                </p>
+           
+            <!--
+            <img src="assets/images/icons/toast-info.svg" alt="">
+            <h3>Info</h3>
+            -->
+            <!-- <img src="assets/images/icons/toast-error.svg" alt="">
+            <h3>Alert</h3>
+            <p>Something went wrong</p> -->
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-main-outline">Ok</button>
+            <button type="button" class="btn btn-danger-outline" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="modal" data-bs-backdrop="static" id="infoMessage" tabindex="-1" [ngStyle]="{'display':displayInfoModal}">
+    <div class="modal-dialog modal-dialog-centered modal-toast modal-toast-success">
+        <div class="modal-content">
+            <img class="modal-header-icon" src="assets/images/icons/toast-info.svg" alt="">
+            <div class="modal-body">
+                <h3 translate>Alert</h3>
+                <p translate>{{ noDataMessage }}</p>
+            </div>            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger-outline" #closebutton data-bs-dismiss="modal" (click)="closeInfoModalpopup()"
+                aria-label="Close" translate>Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" data-bs-backdrop="static" id="saveMessage" tabindex="-1" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog modal-dialog-centered modal-toast modal-toast-success">
+        <div class="modal-content">
+
+            <img class="modal-header-icon" src="assets/images/icons/toast-success.svg" alt="">
+            <div class="modal-body">
+                <h3 translate>Success</h3>
+                <p translate>Bill Generated Successfully</p>                 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-main-outline" (click)="closePopup()">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" data-bs-backdrop="static" id="alertMessage" tabindex="-1" [ngStyle]="{'display':displayErrModal}">
+    <div class="modal-dialog modal-dialog-centered modal-toast modal-toast-success">
+        <div class="modal-content">
+            <!-- <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="closeErrorPopup()"></button>
+            </div> -->
+            <img class="modal-header-icon" src="assets/images/icons/toast-error.svg" alt="">
+            <div class="modal-body">
+                <h3 translate>Alert</h3>
+                <p translate>Something Went Wrong!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger-outline" #closebutton data-bs-dismiss="modal"
+                    (click)="closeErrorPopup()" aria-label="Close" translate>Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" data-bs-backdrop="static" id="noRecMessage" tabindex="-1" [ngStyle]="{'display':displayNoPatientDataModal}">
+    <div class="modal-dialog modal-dialog-centered modal-toast modal-toast-success">
+        <div class="modal-content">
+            <img class="modal-header-icon" src="assets/images/icons/toast-info.svg" alt="">
+            <div class="modal-body">
+                <h3 translate>Alert</h3>
+                <p translate>Enter Patient Details</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger-outline" #closebutton data-bs-dismiss="modal"
+                    (click)="closeNoRecFound()" aria-label="Close" translate>Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Javascript-->
+<!-- <script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assests/js/bootstrap.min.js"></script> -->
+<!-- <script src="assets/js/bootstrap.bundle.min.js"></script> -->
+
+<div class="loader-wrapper" *ngIf="loader">
+    <div class="loader">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <div class="bar4"></div>
+        <div class="bar5"></div>
+        <div class="bar6"></div>
+      </div>
+</div>
+

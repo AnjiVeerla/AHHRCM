@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <nav   *ngIf="router.url !== '/login'" >
+    <body>
+<header class="header sticky-top">
+    <div class="header__wrapper">
+        <div class="header__hospital-logo">
+            <img src="assets/images/AHH-Logo.png" alt="Al Hammadi Hospital">
+        </div>
+        <div class="header__container">
+            <div class="header__details-card">
+                <div class="__photo user-photo">
+                    <img src="assets/images/Avatar.png" class="" alt="">
+                </div>
+                <div class="user-details">
+                    <p class="label-heading">{{username}}</p>
+                    <p translate>Admin</p>
+                </div>
+            </div>
+
+            <div class="header__details-card ms-4">
+                <div class="__photo">
+                    <img src="assets/images/icons/icon-loaction.svg" alt="">
+                </div>
+                <div class="user-details">
+                    <p class="label-heading" translate>Location:</p>
+                    <p translate>NUZHA</p>
+                </div>
+            </div>
+
+            <div class="header__details-card ms-3">
+                <div class="__photo">
+                    <img src="assets/images/icons/icon-facility.svg" alt="">
+                </div>
+                <div class="user-details">
+                    <p class="label-heading" translate>Facility</p>
+                    <p translate>Admin</p>
+                </div>
+            </div>
+            <!--Comman Search-->
+            <form [formGroup]="searchForm" class="CommanSearch__form ms-5">
+                <label for="" class="CommonSearch__label">
+                    <img src="assets/images/icons/icon-search.svg" alt="">
+                </label>
+                <input class="CommonSearch__input form-control" type="text"
+                    placeholder="{{'Search for Mobile Number, National ID' |translate}}" formControlName="searchPatient"
+                    (keyup)="onSearchPatient($event)" autocomplete="disabled">
+                <button type="reset" class="reset-btn" (click)="clearSearch()" translate>
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                        <path d="M10 10l5.09-5.09L10 10l5.09 5.09L10 10zm0 0L4.91 4.91 10 10l-5.09 5.09L10 10z"
+                            stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+            </form>
+            <!-- <div class="text-danger"
+                *ngIf="(this.searchForm.get('searchPatient')?.errors) || (!this.searchForm.get('searchPatient')?.pristine && this.searchForm.get('searchPatient')?.invalid)">
+                <div *ngIf="this.searchForm.get('searchPatient')?.errors?.['pattern']">Enter valid Mb No or National Id or UHID</div>
+            </div> -->
+            <div class="header__actions ms-auto">
+                <!-- Date & Timer -->
+                <div class="date-time">
+                    <span>
+                        <!-- <svg width="25" height="28" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.3123 2.28119H18.7497V1.50013C18.7497 1.06853 18.3999 0.718805 17.9686 0.718805C17.537 0.718805 17.1873 1.06853 17.1873 1.50013V2.28119H7.81245V1.50013C7.81245 1.06853 7.46272 0.718805 7.03112 0.718805C6.59979 0.718805 6.25007 1.06853 6.25007 1.50013V2.28119H4.68742C3.44445 2.28119 2.25217 2.77504 1.37301 3.6542C0.493853 4.53336 0 5.72564 0 6.96861V22.5938C0 23.8367 0.493853 25.029 1.37301 25.9082C2.25217 26.7873 3.44445 27.2812 4.68742 27.2812H20.3126C21.5556 27.2812 22.7478 26.7873 23.627 25.9082C24.5061 25.029 25 23.8367 25 22.5938V6.96861C25 5.72564 24.5061 4.53336 23.627 3.6542C22.7478 2.77504 21.5556 2.28119 20.3126 2.28119H20.3123ZM12.4997 22.5938C10.4278 22.5938 8.44063 21.7706 6.97554 20.3055C5.51046 18.8404 4.68728 16.8532 4.68728 14.7813C4.68728 12.7094 5.51046 10.7222 6.97554 9.25714C8.44063 7.79205 10.4278 6.96887 12.4997 6.96887C14.5716 6.96887 16.5588 7.79205 18.0239 9.25714C19.489 10.7222 20.3122 12.7094 20.3122 14.7813C20.3122 16.8532 19.489 18.8404 18.0239 20.3055C16.5588 21.7706 14.5716 22.5938 12.4997 22.5938V22.5938ZM16.4058 14.7812C16.4058 14.9884 16.3234 15.1869 16.1769 15.3336C16.0305 15.4801 15.8317 15.5623 15.6245 15.5623H12.5005L12.4997 15.5625C12.0684 15.5625 11.7184 15.2125 11.7184 14.7812V10.8748C11.7184 10.4435 12.0684 10.0938 12.4997 10.0938C12.9313 10.0938 13.2811 10.4435 13.2811 10.8751V13.9999H15.6248C16.0561 13.9999 16.4058 14.3496 16.4058 14.7812H16.4058Z" fill="#368796"/>
+                        </svg>  -->
+                    </span>
+                     <div class="details">
+                        <p>{{date}}</p>
+                        <p>{{ time | date: 'hh:mm:ss a' }}</p>
+                    </div>
+                </div>
+                <button>
+                    <img src="assets/images/icons/icon-notify.svg" alt="">
+                </button>
+                <button (click)="redirectToLoginpage()">
+                    <img src="assets/images/icons/icon-log-out.svg" alt="">
+                </button>
+                <!-- <button (click)="changeLanguage('en')">
+                    <img src="assets/images/icons/icon-log-out.svg" alt="">
+                </button>
+                <button (click)="changeLanguage('ar')">
+                    <img src="assets/images/icons/icon-log-out.svg" alt="">
+                </button> -->
+            </div>            
+        </div>
+        <div class="header__menu ms-auto">
+            <button class="" data-bs-toggle="modal" data-bs-target="#mainMenu">
+                <img src="assets/images/icons/icon-menu.svg" alt="">
+            </button>
+        </div>
+    </div>
+    <!-- Main Menu-->
+
+</header>
+<div class="modal" data-bs-backdrop="static" tabindex="-1" id="multiplePatients" tabindex="-1" [ngStyle]="{'display':displayMultiplePatients}">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl ">
+        <div class="modal-content">
+            <div class="modal-header">                
+                <h5 class="modal-title" translate>Patient Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close" (click)="closeErrorPopup()"></button>
+            </div>
+            <div class="modal-body">                
+                <table class="table">
+                    <thead>
+                        <tr>                            
+                            <th translate>Patient Name</th>
+                            <th translate>SSN</th>
+                            <th translate>Registration Date</th>  
+                            <th translate>Action</th>                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let patient of multiplePatientsList;let i=index">
+                          <td>{{patient.PatientName}}</td>
+                          <td>{{patient.SSN}}</td>
+                          <td>{{patient.RegistrationDate | date : 'dd-MMM-yyyy'}}</td> 
+                          <td><button class="btn btn-main-fill" translate type="button" (click)="onPatientSelect(patient)">Select</button></td>                         
+                        </tr>
+                      </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="mainMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollabel">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" translate>Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="row px-4 pt-3">
+                <div class="col-lg-8 ms-auto">
+                    <div class="d-flex align-items-center">
+                        <label for="" class="form-label mb-0 px-2">Facility</label>
+                        <select name="" id="" class="form-select">
+                            <option value="" translate>select</option>
+                            <option value="" translate>option-1</option>
+                            <option value="" translate>option-2</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-body m-4">
+                <div class="accordion accordion-menu" id="facilityList">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="facilityName1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#ficility1" aria-expanded="true" aria-controls="ficility1" translate>
+                                Administration
+                            </button>
+                        </h2>
+                        <div id="ficility1" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <a href="#" class="active" translate>Organization Master</a>
+                                <a href="#" translate>Password Change</a>
+                                <a href="#" translate>User Creation</a>
+                                <a href="#" translate>User Role Mapping</a>
+                                <a href="#" translate>Role Feature Mapping</a>
+                                <a href="#" translate>Password Configurations</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="facilityName2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#ficility2" aria-expanded="false" aria-controls="ficility2" translate>
+                                Registration
+                            </button>
+                        </h2>
+                        <div id="ficility2" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <a (click)="RedirectToPage('patient-registration')" translate>Patient Registration</a>
+                                <a (click)="RedirectToPage('opbilling')" translate>Out Patient Billing</a>
+                                <a href="#" translate>Arab-Eng Names Disctionary</a>
+                                <a href="#" translate>Merge UHID</a>
+                                <a href="#" translate>Patient Finder</a>
+                                <a href="#" translate>Check Eligibility</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="facilityName3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#ficility3" aria-expanded="false" aria-controls="ficility3" translate>
+                                Contract Management
+                            </button>
+                        </h2>
+                        <div id="ficility3" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <a (click)="RedirectToPage('company')" translate>Company Master</a>
+                                <a href="#" translate>Agreement</a>
+                                <a href="#" translate>Coverage Group</a>
+                                <a href="#" translate>Price List</a>
+                                <a href="#" translate>Op Package Deal Designer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</nav>
+</html>

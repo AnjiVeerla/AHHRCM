@@ -1,0 +1,30 @@
+
+.table{
+    border:1px solid $neutral-100;
+    th{
+        font-weight: $medium;
+        font-size:0.75rem;
+        color:$primary-600;
+        white-space: nowrap;
+        padding:0.5rem 0.75rem;
+        background-color: $primary-50 !important;
+        vertical-align: middle;
+    }
+    td{
+        font-size:0.75rem;
+        white-space: nowrap;
+        color:$neutral-700;
+        padding:0.5rem 0.75rem !important;
+        vertical-align: middle;
+    }
+    .btn{
+        padding-top:0.2rem;
+        padding-bottom:0.2rem;
+    }
+    tfoot{
+        th{
+            background-color: #FCEBE8 !important;
+            color: #BD7264;
+        }
+    }
+}

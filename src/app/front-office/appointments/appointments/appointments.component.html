@@ -1,0 +1,121 @@
+<div class="page-wrapper">
+    <div class="content container-fluid">
+<div class="page-header card">
+	<div class="row">
+		<div class="col-sm-5 col-auto">
+			<h3 class="page-title">Health Profile</h3>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item"><a href="#">Patients</a></li>
+                <li class="breadcrumb-item"><a href="#">Maysoon Mohammad</a></li>
+				<li class="breadcrumb-item active">Health Profile</li>
+			</ul>
+		</div>
+		<div class="col-sm-7 col">
+        <ul class="links">
+        <li>
+            <a class="edit-link float-right mt-2" href="../13-1-Remote-Patient-Monitoring.html">
+                <i class="fe fe-bar-chart mr-1"></i> <br />
+                <span>Monitoring</span>
+            </a>
+        </li>
+        <li>
+            <a class="edit-link float-right mt-2" href="../10-set-appointment-patient.html">
+                <i class="fa fa-calendar mr-1"></i> <br />
+                <span>Set appointment</span>
+            </a>
+        </li>
+        <li>
+            <a class="edit-link float-right mt-2" href="../12-Consultation-Notes.html">
+                <i class="fa fa-file mr-1"></i> <br />
+                <span>Consult</span>
+            </a>
+        </li>
+        <li>
+            <a class="edit-link float-right mt-2" href="../15-Report-Patient-Billing.html">
+                <i class="fa fa-credit-card mr-1"></i> <br />
+                <span>Bill Patient</span>
+            </a>
+        </li>
+        <li>
+            <a class="edit-link float-right mt-2" href="../5-5-Send-Notification.html">
+                <i class="fa fa-envelope mr-1"></i> <br />
+                <span>Message</span>
+            </a>
+        </li>
+        <li>
+            <a class="edit-link float-right mt-2" href="../18-Help.html">
+                <i class="fa fa-question-circle mr-1"></i> <br />
+                <span>Help</span>
+            </a>
+        </li>
+        </ul>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+    <div class="col-sm-3 p-3">
+        <div class="card">
+			<div class="card-body p-0">
+                <div class="verticla-tab health-trackers-tabs nested-tabs pb-15 pt-15">
+                  
+                  <button class="tablinks" onclick="accountsettings(event, 'HealthProfile')" id="defaultOpen">Health Profile</button>
+                  <ul id="myUL">
+                      <li>
+                        <button class="tablinks caret" style="padding-left: 0!important;">Health Trackers</button>
+                        <ul class="nested">
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'AddTrackers')"> <span class="mr-2">-</span> New Tracker Entry</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'BloodPressure')"> <span class="mr-2">-</span> Blood Pressure</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'BloodSugar')"> <span class="mr-2">-</span> Blood Sugar</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'OxygenLevel')"> <span class="mr-2">-</span> Oxygen Level</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'Pulse')"> <span class="mr-2">-</span> Pulse</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'RespiratoryRates')"> <span class="mr-2">-</span> Respiratory Rates</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'Temperature')"> <span class="mr-2">-</span> Temperature</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'Cholesterol')"> <span class="mr-2">-</span> Cholesterol</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'JointStiffness')"> <span class="mr-2">-</span> Joint Stiffness</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'Pain')"> <span class="mr-2">-</span> Pain</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'Exercise')"> <span class="mr-2">-</span> Exercise</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'Food')"> <span class="mr-2">-</span> Food</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'Height')"> <span class="mr-2">-</span> Height</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'Sleep')"> <span class="mr-2">-</span> Sleep</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'WaistMeasurement')"> <span class="mr-2">-</span> Waist Measurement</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'Weight')"> <span class="mr-2">-</span> Weight</button>
+                        </ul>
+                      </li>
+                  </ul>
+                  <button class="tablinks" onclick="accountsettings(event, 'MedicalReports')">Medical Reports</button>
+                  <button class="tablinks" onclick="accountsettings(event, 'HealthJournal')">Health Journal</button>
+                  
+                  <hr />
+                  
+                  <button class="tablinks" onclick="accountsettings(event, 'ClinicConsultations')">Clinic Consultations</button>
+                  <button class="tablinks" onclick="accountsettings(event, 'TextConsultations')">Text Consultations</button>
+                  <button class="tablinks" onclick="accountsettings(event, 'Video')">Video Consultations</button>
+                  
+                  <ul id="myUL">
+                      <li>
+                        <button class="tablinks caret" style="padding-left: 0!important;">Monitoring</button>
+                        <ul class="nested">
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'Monitoring')"> <span class="mr-2">-</span> Monitoring</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'MonitorPlan')"> <span class="mr-2">-</span> Monitor Plan</button>
+                          <button class="tablinks non-active" onclick="accountsettings(event, 'AssignPatient')"> <span class="mr-2">-</span> Assign Patient</button>
+                        </ul>
+                      </li>
+                  </ul>
+                  
+                  <hr />  
+                  
+                  <button class="tablinks" onclick="accountsettings(event, 'BasicProfile')">Basic Profile</button>
+                  <button class="tablinks" onclick="accountsettings(event, 'ConsultationNotes')">Consultation Notes</button>
+                  <button class="tablinks" onclick="accountsettings(event, 'Prescriptions')">Prescriptions</button>
+                  <button class="tablinks" onclick="accountsettings(event, 'Payments')">Payments</button>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+</div>
+</div>

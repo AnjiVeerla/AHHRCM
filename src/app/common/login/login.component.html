@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div class="login__wrapper">
+        <div class="login__anim-wrapper ">
+            <div class="logo-vision">
+                <img src="assets/images/vision-2030.png" alt="">
+            </div>
+            <div class="alh__logo text-center mt-5">
+                <svg width="auto" height="260" viewBox="0 0 234 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1074_1040)">
+                    <path d="M190.129 157.522C172.984    180.223 150.907 194.192 123.484 198.385C79.4599 205.122 43.095 190.875 17.3275 154.32C-14.9666 108.518 -0.624232 46.026 47.8984 15.8621C93.8023 -12.6802 155.528 -1.7097 188.066 40.7816C189.057 42.0706 189.986 43.414 190.759 44.9133C181.573 37.5725 171.756 31.3918 160.555 27.8571C132.121 18.8812 105.126 22.1242 81.0814 39.9946C42.1859 68.9033 39.5467 121.721 74.7311 155.114C91.421 170.956 111.734 177.476 134.38 177.713C154.028 177.923 171.342 171.424 186.75 159.456C187.462 158.9 188.168 158.336 188.894 157.807C189.043 157.699 189.287 157.705 190.115 157.522H190.129Z" fill="#ED1C24"/>
+                    <path d="M184.09 104.691H175.495V122.27H155.684V104.766H145.873V142.474H126.382V54.9543H145.697V92.5336H155.684L155.643 74.8193H175.508L175.474 92.554H183.982V55.0086H203.596V92.5879H213.732V75.206H233.081V122.25H213.8V104.556L203.609 104.522C203.609 104.522 203.643 128.017 203.643 138.193C203.643 139.53 203.643 140.873 203.643 142.44H184.104V104.691H184.09Z" fill="#2E3192"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1074_1040">
+                    <rect width="233.068" height="200" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg> 
+            </div>               
+                    
+            <div class="bg__scroll">
+                <!-- <img src="assets/images/bg-scroll.png" alt=""> -->
+            </div>
+        </div>
+        <div class="login__form-wrapper">
+            <div style="z-index: 99;" class="w-100 d-flex align-items-center justify-content-center">
+            <div style="direction: ltr !important;" class="toggle__swithcer">
+                <button [class]="btnEnlang" (click)="changeLanguage('en')">English</button>
+                <button [class]="btnArlang" (click)="changeLanguage('ar')">Arabic</button>
+            </div>
+            </div>
+            <div class="login__form-card">
+                
+                <p class="message mb-3">
+                </p>
+                <form [formGroup]="loginForm" class="w-100" (keydown.enter)="$event.preventDefault()">
+                <div class="input-container">
+                    <span class="input-icon"> 
+                        <svg  height="24" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.9548 25.2755C26.1315 25.2755 31.1565 19.284 31.1565 11.92C31.1565 4.90157 26.5502 0 19.9548 0C13.3594 0 8.75304 4.90168 8.75304 11.92C8.75304 19.2841 13.7784 25.2755 19.9548 25.2755ZM19.9548 3.73022C24.4237 3.73022 27.4264 7.02135 27.4264 11.92C27.4264 17.2277 24.0747 21.5457 19.9548 21.5457C15.8349 21.5457 12.4831 17.2273 12.4831 11.92C12.4831 7.0218 15.4859 3.73022 19.9548 3.73022ZM21.1009 26.5189H18.8082C7.9466 26.5189 0.648926 32.7945 0.648926 42.1348C0.648926 43.1643 1.48373 44 2.51414 44C3.54409 44 4.37936 43.1643 4.37936 42.1348C4.37936 33.363 12.1524 30.2503 18.8084 30.2503H21.1012C27.7579 30.2503 35.5313 33.3636 35.5313 42.1348C35.5313 43.1643 36.3661 44 37.3965 44C38.4265 44 39.2618 43.1643 39.2618 42.1348C39.2618 32.7945 31.9628 26.5189 21.1009 26.5189Z" fill="#368796"/>
+                         </svg>
+                    </span>
+                    <input type="text" id="username" class="form-control mb-3" formControlName="username" (keyup)="loginValidate($event)" translate placeholder="{{'User Name' |translate}}">
+                    <span class="text-danger" *ngIf="(isFormSubmitted && this.loginForm.get('username')?.errors) || (!this.loginForm.get('username')?.pristine && this.loginForm.get('username')?.invalid)">
+                    <div *ngIf="this.loginForm.get('username')?.errors?.['required']" translate>User Name is required</div></span>
+                </div>  
+                
+                <div class="input-container">
+                    <span class="input-icon"> 
+                        <svg  height="24" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5917 21.3631H24.7908V11.9999C24.7908 9.49709 23.767 7.22145 22.1195 5.57187C20.4676 3.92508 18.192 2.90058 15.6915 2.90058C13.1907 2.90058 10.9151 3.92499 9.26587 5.57457L9.19357 5.64142C7.58668 7.2855 6.59151 9.53154 6.59151 11.9995L6.5917 21.3631ZM15.6904 28.4626C16.5457 28.4626 17.2465 29.1641 17.2465 30.0193C17.2465 30.6165 16.8983 31.1614 16.3643 31.4206L16.6289 36.5282C16.6388 36.725 16.4874 36.8938 16.2899 36.9037L15.109 36.9054C14.9115 36.9054 14.7502 36.7444 14.7502 36.5466L15.0176 31.4213C14.4839 31.1645 14.1347 30.6169 14.1347 30.0193C14.1347 29.163 14.8345 28.4626 15.6904 28.4626L15.6904 28.4626ZM27.6919 21.3798C28.6307 21.4671 29.4775 21.8872 30.1097 22.5195C30.8235 23.2326 31.2665 24.2178 31.2665 25.3009V28.4247C31.2665 32.7077 29.5133 36.6035 26.6913 39.4248C23.8693 42.2468 19.9742 44 15.6912 44C11.4079 44 7.513 42.2468 4.69103 39.4248C1.86906 36.6035 0.115845 32.7077 0.115845 28.4247V25.3009C0.115845 24.2175 0.558836 23.2326 1.27261 22.5195C1.90487 21.8872 2.75134 21.4667 3.69045 21.3798V12C3.69045 8.74314 5.0082 5.77694 7.13481 3.60939L7.21393 3.52345C9.38794 1.34944 12.3897 0 15.6908 0C18.9926 0 21.994 1.34944 24.1681 3.52345C26.3415 5.70331 27.6916 8.70295 27.6916 12.0004V21.3802L27.6919 21.3798Z" fill="#368796"/>
+                        </svg>
+                    </span>
+                    <input type="text" id="password" type="password" class="form-control mb-3" (keyup)="loginValidate($event)" translate placeholder="{{'Password' |translate}}" formControlName="password">
+                    <span class="text-danger" *ngIf="(isFormSubmitted && this.loginForm.get('password')?.errors) || (!this.loginForm.get('password')?.pristine && this.loginForm.get('password')?.invalid)">
+                    <div *ngIf="this.loginForm.get('password')?.errors?.['required']" translate>Password is required</div></span>
+                </div>
+
+                <div class="input-container">
+                    <span class="input-icon"> 
+                        <svg  height="26" viewBox="0 0 29 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4581 0.00210518C22.0962 -0.125346 27.3831 5.54833 27.5214 13.1937C27.6686 21.2797 20.3356 28.3799 15.7397 34.3656C15.0721 35.2313 13.7376 35.203 13.1159 34.2813C12.0353 32.6798 10.7195 31.0425 9.35357 29.3429C5.45846 24.4957 1.27568 19.7737 1.39534 13.1942C1.53337 5.55262 6.81766 -0.123935 14.4586 0.00259406L14.4581 0.00210518ZM14.4581 7.27826C18.3599 7.27826 21.5228 10.4411 21.5228 14.3429C21.5228 18.2447 18.3599 21.408 14.4581 21.408C10.556 21.408 7.39309 18.2444 7.39309 14.3429C7.39309 10.4411 10.556 7.27826 14.4581 7.27826ZM23.9677 31.3658C30.0936 34.1001 30.0936 39.4832 23.9677 42.2175C18.6428 44.5942 10.2736 44.5942 4.94764 42.2175C-1.17827 39.4832 -1.17827 34.1001 4.94764 31.3658C5.84013 30.9672 6.81802 30.6361 7.85348 30.3709C8.61145 31.316 9.3843 32.2505 10.1394 33.1854C8.71984 33.4339 7.3949 33.8106 6.26409 34.3151C2.67934 35.9154 2.67934 37.6676 6.26409 39.2679C10.7241 41.2583 18.1913 41.2583 22.6514 39.2679C26.2362 37.6676 26.2362 35.9154 22.6514 34.3151C21.5725 33.8339 20.3172 33.4692 18.9713 33.2207C19.7205 32.3084 20.4806 31.3722 21.2245 30.413C22.1995 30.6708 23.1224 30.9881 23.9676 31.3659L23.9677 31.3658Z" fill="#368796"/>
+                        </svg>
+                    </span>
+                    <select class="form-select form-control text-left mb-3" formControlName="location" id="">
+                        <option value="" translate>Locations</option>
+                        <!-- <option value="1" translate>OLAYA</option>
+                        <option value="2" translate>SUWAIDI</option>
+                        <option value="3" selected translate>NUZHA</option> -->
+                        <option translate *ngFor="let userlocation of userlocations" [value]="userlocation.name">{{userlocation.name}}</option>
+                    </select> 
+                    <span class="text-danger" *ngIf="(isFormSubmitted && this.loginForm.get('location')?.errors) || (!this.loginForm.get('location')?.pristine && this.loginForm.get('location')?.invalid)">
+                    <div *ngIf="this.loginForm.get('location')?.errors?.['required']" translate>Location is required</div></span>
+                        <!-- <div *ngIf="isFormSubmitted && this.loginForm.get('location')?.errors" class="invalid-feedback">
+                        <div translate *ngIf="this.loginForm.get('location')?.hasError('required') ||  this.loginForm.get('location')?.value==''">Please select a Location</div>
+                    </div> -->
+                </div>
+            </form>
+                <!-- <input type="text" class="form-control mb-3" placeholder="Enter Your National ID"> -->
+              
+                <!-- <a class="btn btn-lg btn-primary mt-4" href="patient-registration.html">Submit</a> -->
+                <div translate id="error" *ngIf="iserror" class="text-danger">{{errormsg}}</div>
+                <button class="btn btn-lg btn-primary w-75 mt-5" translate (click)="login()">Submit</button>
+            </div>
+
+            <!--Floating Objects-->
+            <span class="wrapper__object wrapper__object-1"><img src="assets/images/login-bg/object-1.png" alt=""> </span>
+            <span class="wrapper__object wrapper__object-2"><img src="assets/images/login-bg/object-2.png" alt="">  </span>
+            <span class="wrapper__object wrapper__object-3"><img src="assets/images/login-bg/object-3.png" alt="">  </span>
+            <span class="wrapper__object wrapper__object-4"><img src="assets/images/login-bg/object-4.png" alt="">  </span>
+            <span class="wrapper__object wrapper__object-5"><img src="assets/images/login-bg/object-5.png" alt="">  </span>
+            <div class="w-100 d-flex align-items-center justify-content-center">
+                <p class="date-time mb-0 mt-auto">{{date}} {{ time | date: 'hh:mm:ss a' }}</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="loader-wrapper" *ngIf="loader">
+        <div class="loader">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+            <div class="bar5"></div>
+            <div class="bar6"></div>
+            <div class="bar1"></div>
+        </div>
+    </div>
+</body>
+</html>

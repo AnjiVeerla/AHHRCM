@@ -1,0 +1,53 @@
+#AgeUOMID {
+  pointer-events: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.rotate {
+  border: none !important;
+}
+
+.print-wrapper * {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.print-wrapper table {
+  border-collapse: collapse;
+}
+
+.print-wrapper table th, .print-wrapper table td {
+  border: none;
+  padding: 0.25rem;
+}
+
+.print-wrapper table th:last-child, .print-wrapper table td:last-child {
+  min-width: 320px;
+}
+
+.print-wrapper table.rotate {
+  transform: rotate(90deg) translate(45%, 160%);
+}
+
+@media print {
+  header, footer, aside, form, title {
+    display: none;
+  }
+  @page {
+    size: A4;
+    margin: 4mm;
+  }
+}
+#DownloadAdultBand {
+  height: 740px;
+}/*# sourceMappingURL=patient-registration.component.css.map */

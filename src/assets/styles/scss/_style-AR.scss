@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+
+html,
+body{
+    direction:rtl !important;
+    font-family: 'Tajawal', sans-serif !important;
+    font-size:16px;
+}
+*{
+    font-family: 'Tajawal', sans-serif !important;  
+}
+
+// FOMRS
+.custom-upload{
+    &::before{
+        left: unset;
+        right: 0;
+    }
+}
+
+label{
+    padding-left:0.75rem;
+    &[required]{
+        background-position: 4% top;
+        padding-right:0.5rem;
+    }
+}
+
+//MODAL MENU
+#mainMenu{
+    .modal-dialog{
+        margin-left:unset;
+        margin-right:auto;
+    }
+}
+//SECTION HEADING
+.section__heading{
+    border-left:0;
+    border-right:0.25rem solid $primary-400;
+}
+
+//Sub-heading
+.sub-heading{
+    border-left: 0;
+    border-right:0.25rem solid $primary-600;
+}
+
+.availability__card {
+    &.selected{
+        background-position: 1rem 1rem;
+    }
+}
+
+.card__dashed{
+    .heading{
+        left:unset;
+        right: 2rem;
+    }
+}
+.login__form-wrapper .date-time {
+    text-align:right;
+    direction:ltr;
+}
+.mat-form-field-infix .mat-datepicker-input  {
+    text-align: right;
+    padding-right: 0.5rem;
+    direction: ltr !important;
+}
+
+
+.input-file-upload{
+    width:112px;
+    overflow: hidden;
+    margin-bottom:0.75rem;
+    margin-top:-0.4rem;
+    &::-webkit-file-upload-button{
+        visibility: hidden;
+    }
+    &::before{
+        width: 100%;
+        content:'حمل الصورة';
+        display: inline-block;
+        font-size:0.875rem;
+        padding-left:0.5rem;
+        padding-right:0.5rem;
+        margin-top:1rem;
+        outline: none;
+        white-space: nowrap;
+        cursor: pointer;
+        display: inline-block;
+        color:$primary-600;
+        border-radius: 1.5rem;
+        padding-top:0.25rem;
+        padding-bottom:0.25rem;
+        text-align: center;
+        &:hover{
+            background-color: $primary-100;
+            border:1px solid $primary-600;
+            color:$primary-600;
+        }
+    }
+    &::before{
+        border:1px solid $primary-500;
+        background-color: #f8fcfc;
+    }
+}
+
+
+.custom-upload{
+    position: relative;
+    &::before{
+        position: absolute;
+        top:0;
+        left:0;
+        height: 100%;
+        width:7.75em;
+        color:$primary-50;
+        content: 'تحميل معرف';
+        background-color: $primary-500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &.label-upload{
+        &::before{
+            content: 'Upload';
+        }
+    }
+}

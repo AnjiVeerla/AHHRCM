@@ -1,0 +1,1214 @@
+{
+  "MasterDataList": [
+    {
+      "Type": "1",
+      "TableName": "Genders",
+      "DemoGraphicsData": [
+        {
+          "Type": "1  ",
+          "Names": "Male",
+          "Names2L": "ذكر",
+          "Id": "1"
+        },
+        {
+          "Type": "1  ",
+          "Names": "Female",
+          "Names2L": "انثى",
+          "Id": "2"
+        },
+        {
+          "Type": "1  ",
+          "Names": "Others",
+          "Names2L": "أخرى",
+          "Id": "3"
+        },
+        {
+          "Type": "1  ",
+          "Names": "Unknown",
+          "Names2L": "غير معروف",
+          "Id": "4"
+        }
+      ]
+    },
+    {
+      "Type": "2",
+      "TableName": "AgeUOMs",
+      "DemoGraphicsData": [
+        {
+          "Type": "2  ",
+          "Names": "Years",
+          "Names2L": "سنة",
+          "Id": "1"
+        },
+        {
+          "Type": "2  ",
+          "Names": "Months",
+          "Names2L": "شهور",
+          "Id": "2"
+        },
+        {
+          "Type": "2  ",
+          "Names": "Days",
+          "Names2L": "يوم",
+          "Id": "3"
+        },
+        {
+          "Type": "2  ",
+          "Names": "Hours",
+          "Names2L": "ساعة",
+          "Id": "4"
+        },
+        {
+          "Type": "2  ",
+          "Names": "Minute(s)",
+          "Names2L": "دقيقة",
+          "Id": "5"
+        },
+        {
+          "Type": "2  ",
+          "Names": "Second(s)",
+          "Names2L": "ثواني",
+          "Id": "6"
+        },
+        {
+          "Type": "2  ",
+          "Names": "Week(s)",
+          "Names2L": "أسابيع",
+          "Id": "7"
+        }
+      ]
+    },
+    {
+      "Type": "5",
+      "TableName": "MaritalStatus",
+      "DemoGraphicsData": [
+        {
+          "Type": "5  ",
+          "Names": "Married",
+          "Names2L": "",
+          "Id": "2"
+        },
+        {
+          "Type": "5  ",
+          "Names": "Single",
+          "Names2L": "",
+          "Id": "3"
+        }
+      ]
+    },
+    {
+      "Type": "6",
+      "TableName": "Nationalities",
+      "DemoGraphicsData": [
+        {
+          "Type": "6  ",
+          "Names": "OTHERS",
+          "Names2L": "أخرى ",
+          "Id": "-1"
+        },
+        {
+          "Type": "6  ",
+          "Names": "INDIAN",
+          "Names2L": "هندي ",
+          "Id": "1"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ARABIAN",
+          "Names2L": "عربي",
+          "Id": "2"
+        },
+        {
+          "Type": "6  ",
+          "Names": "AMERICAN",
+          "Names2L": "أمريكي",
+          "Id": "3"
+        },
+        {
+          "Type": "6  ",
+          "Names": "RUSSIAN",
+          "Names2L": "روسي ",
+          "Id": "4"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SRI LANKAN",
+          "Names2L": "سيرلانكي ",
+          "Id": "5"
+        },
+        {
+          "Type": "6  ",
+          "Names": "PAKISTANI",
+          "Names2L": "باكستاني ",
+          "Id": "6"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BANGLADESHI",
+          "Names2L": "بنغالي ",
+          "Id": "7"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SUDAN",
+          "Names2L": "سوداني ",
+          "Id": "8"
+        },
+        {
+          "Type": "6  ",
+          "Names": "EGYPTIAN",
+          "Names2L": "مصري ",
+          "Id": "9"
+        },
+        {
+          "Type": "6  ",
+          "Names": "TAIWANESE",
+          "Names2L": "تايواني",
+          "Id": "10"
+        },
+        {
+          "Type": "6  ",
+          "Names": "CHINESE",
+          "Names2L": "صيني ",
+          "Id": "11"
+        },
+        {
+          "Type": "6  ",
+          "Names": "FILIPINO",
+          "Names2L": "فيلبيني ",
+          "Id": "12"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MALAYSIAN",
+          "Names2L": "ماليزي ",
+          "Id": "13"
+        },
+        {
+          "Type": "6  ",
+          "Names": "AFGHAN",
+          "Names2L": "أفغاني ",
+          "Id": "14"
+        },
+        {
+          "Type": "6  ",
+          "Names": "IRAQI",
+          "Names2L": "عراقي ",
+          "Id": "15"
+        },
+        {
+          "Type": "6  ",
+          "Names": "KUWAIT",
+          "Names2L": "كويتي ",
+          "Id": "16"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BEHRAIN",
+          "Names2L": "بحريني ",
+          "Id": "17"
+        },
+        {
+          "Type": "6  ",
+          "Names": "UNITED ARAB EMIRATES",
+          "Names2L": "اماراتي ",
+          "Id": "18"
+        },
+        {
+          "Type": "6  ",
+          "Names": "OMAN",
+          "Names2L": "عماني ",
+          "Id": "19"
+        },
+        {
+          "Type": "6  ",
+          "Names": "YEMEN",
+          "Names2L": "يمني ",
+          "Id": "20"
+        },
+        {
+          "Type": "6  ",
+          "Names": "PALESTINE",
+          "Names2L": "فلسطيني",
+          "Id": "21"
+        },
+        {
+          "Type": "6  ",
+          "Names": "LIBYAN",
+          "Names2L": "ليبي ",
+          "Id": "22"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SOMALIA",
+          "Names2L": "صومالي",
+          "Id": "23"
+        },
+        {
+          "Type": "6  ",
+          "Names": "NIGERIA",
+          "Names2L": "نيجيري ",
+          "Id": "24"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SAUDI",
+          "Names2L": "سعودي",
+          "Id": "25"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BRAZIL",
+          "Names2L": "برازيلي ",
+          "Id": "26"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ARGENTENA",
+          "Names2L": "أرجنتيني",
+          "Id": "27"
+        },
+        {
+          "Type": "6  ",
+          "Names": "NEWZEALAND",
+          "Names2L": "نيوزيلاندي ",
+          "Id": "28"
+        },
+        {
+          "Type": "6  ",
+          "Names": "AUSTRALIA",
+          "Names2L": "أسترالي",
+          "Id": "29"
+        },
+        {
+          "Type": "6  ",
+          "Names": "AUSTERIA",
+          "Names2L": "نمساوي ",
+          "Id": "30"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SWISS",
+          "Names2L": "سويسري ",
+          "Id": "31"
+        },
+        {
+          "Type": "6  ",
+          "Names": "PORTUGAL",
+          "Names2L": "برتغالي ",
+          "Id": "32"
+        },
+        {
+          "Type": "6  ",
+          "Names": "NETHERLAND",
+          "Names2L": "هولندي ",
+          "Id": "33"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ITALY",
+          "Names2L": "إيطالي",
+          "Id": "34"
+        },
+        {
+          "Type": "6  ",
+          "Names": "GREEC",
+          "Names2L": "يوناني ",
+          "Id": "35"
+        },
+        {
+          "Type": "6  ",
+          "Names": "IRISH",
+          "Names2L": "إيرلندي",
+          "Id": "36"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SPANISH",
+          "Names2L": "إسباني",
+          "Id": "37"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ARMENEA",
+          "Names2L": "أرميني",
+          "Id": "38"
+        },
+        {
+          "Type": "6  ",
+          "Names": "FRENCH",
+          "Names2L": "فرنسي ",
+          "Id": "39"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ENGLAND",
+          "Names2L": "إنكليزي",
+          "Id": "40"
+        },
+        {
+          "Type": "6  ",
+          "Names": "IRAN",
+          "Names2L": "إيراني",
+          "Id": "41"
+        },
+        {
+          "Type": "6  ",
+          "Names": "LEBANEN",
+          "Names2L": "لبناني ",
+          "Id": "42"
+        },
+        {
+          "Type": "6  ",
+          "Names": "JORDANIAN",
+          "Names2L": "أردني",
+          "Id": "43"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SYRIAN",
+          "Names2L": "سوري ",
+          "Id": "44"
+        },
+        {
+          "Type": "6  ",
+          "Names": "JAPANISH",
+          "Names2L": "ياباني ",
+          "Id": "45"
+        },
+        {
+          "Type": "6  ",
+          "Names": "GERMANY",
+          "Names2L": "ألماني",
+          "Id": "46"
+        },
+        {
+          "Type": "6  ",
+          "Names": "FINLAND",
+          "Names2L": "فنلندي ",
+          "Id": "47"
+        },
+        {
+          "Type": "6  ",
+          "Names": "DENMARK",
+          "Names2L": "دنماركي ",
+          "Id": "48"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SWEDAN",
+          "Names2L": "سويدي ",
+          "Id": "49"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MOROCCO",
+          "Names2L": "مغربي ",
+          "Id": "50"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MALAYSIA",
+          "Names2L": "ماليزي",
+          "Id": "51"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ALGERIA",
+          "Names2L": "جزائري ",
+          "Id": "52"
+        },
+        {
+          "Type": "6  ",
+          "Names": "HANGERIA",
+          "Names2L": "هنقاري ",
+          "Id": "53"
+        },
+        {
+          "Type": "6  ",
+          "Names": "TURKI",
+          "Names2L": "تركي ",
+          "Id": "54"
+        },
+        {
+          "Type": "6  ",
+          "Names": "INDONESIA",
+          "Names2L": "أندونيسي",
+          "Id": "55"
+        },
+        {
+          "Type": "6  ",
+          "Names": "QATARI",
+          "Names2L": "قطري ",
+          "Id": "56"
+        },
+        {
+          "Type": "6  ",
+          "Names": "INDIONISA",
+          "Names2L": "",
+          "Id": "57"
+        },
+        {
+          "Type": "6  ",
+          "Names": "CANADA",
+          "Names2L": "كندي ",
+          "Id": "58"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ERITREAN",
+          "Names2L": "إريتري",
+          "Id": "59"
+        },
+        {
+          "Type": "6  ",
+          "Names": "KENYA",
+          "Names2L": "كيني",
+          "Id": "60"
+        },
+        {
+          "Type": "6  ",
+          "Names": "AFRICAN",
+          "Names2L": "",
+          "Id": "61"
+        },
+        {
+          "Type": "6  ",
+          "Names": "GUINEENNE",
+          "Names2L": "غيني ",
+          "Id": "62"
+        },
+        {
+          "Type": "6  ",
+          "Names": "CHAD",
+          "Names2L": "تشادي ",
+          "Id": "65"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ETHIOPIA",
+          "Names2L": "أثيوبي",
+          "Id": "66"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ROMANIA",
+          "Names2L": "روماني",
+          "Id": "67"
+        },
+        {
+          "Type": "6  ",
+          "Names": "TANZANIA",
+          "Names2L": "تنزاني",
+          "Id": "68"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ALBANIAN",
+          "Names2L": "ألباني",
+          "Id": "69"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ALNIGER",
+          "Names2L": "النيجر",
+          "Id": "70"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ANDORRAN",
+          "Names2L": "أندوري",
+          "Id": "71"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ANGOLAN",
+          "Names2L": "أنغولي",
+          "Id": "72"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ALASKAN",
+          "Names2L": "الاسكا ",
+          "Id": "73"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BAHAMIAN",
+          "Names2L": "باهامي ",
+          "Id": "74"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BARBADOS",
+          "Names2L": "بربادوسي ",
+          "Id": "75"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BENIN",
+          "Names2L": "بينيني",
+          "Id": "76"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BULGARIAN",
+          "Names2L": "بلغاري ",
+          "Id": "77"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BELGIUN",
+          "Names2L": "بلجيكي ",
+          "Id": "78"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BILAROUZIA",
+          "Names2L": "بيلاروزي",
+          "Id": "79"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BOLIVIAN",
+          "Names2L": "بوليفي",
+          "Id": "80"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BURMESE",
+          "Names2L": "بورمي",
+          "Id": "81"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BERMUDA",
+          "Names2L": "برمودي ",
+          "Id": "82"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BOSNIA",
+          "Names2L": "بوسني",
+          "Id": "83"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BURKINAFASO",
+          "Names2L": "بوركيني",
+          "Id": "84"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BRUNEI",
+          "Names2L": "برناوي ",
+          "Id": "85"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BURANDIAN",
+          "Names2L": "بوراندي ",
+          "Id": "86"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BOTSWANIAN",
+          "Names2L": "بوتسواني ",
+          "Id": "87"
+        },
+        {
+          "Type": "6  ",
+          "Names": "CUBAN",
+          "Names2L": "كوبي ",
+          "Id": "88"
+        },
+        {
+          "Type": "6  ",
+          "Names": "CARRIBEAN",
+          "Names2L": "كاريبي ",
+          "Id": "89"
+        },
+        {
+          "Type": "6  ",
+          "Names": "CHECHNIYA",
+          "Names2L": "شيشاني ",
+          "Id": "90"
+        },
+        {
+          "Type": "6  ",
+          "Names": "CHILEAN",
+          "Names2L": "تشيلي ",
+          "Id": "91"
+        },
+        {
+          "Type": "6  ",
+          "Names": "COLUMBIAN",
+          "Names2L": "كولومبي ",
+          "Id": "92"
+        },
+        {
+          "Type": "6  ",
+          "Names": "CAMERROONIAN",
+          "Names2L": "كاميروني ",
+          "Id": "93"
+        },
+        {
+          "Type": "6  ",
+          "Names": "COMORIAN",
+          "Names2L": "كوموبي ",
+          "Id": "94"
+        },
+        {
+          "Type": "6  ",
+          "Names": "CONGOLESE",
+          "Names2L": "كونغولي ",
+          "Id": "95"
+        },
+        {
+          "Type": "6  ",
+          "Names": "COSTA RICAN",
+          "Names2L": "كوستاريكي ",
+          "Id": "96"
+        },
+        {
+          "Type": "6  ",
+          "Names": "CYPRIOT",
+          "Names2L": "سيبريوتي ",
+          "Id": "97"
+        },
+        {
+          "Type": "6  ",
+          "Names": "CZECHOSLOVAKIAN",
+          "Names2L": "تشيكوسلوفاكي",
+          "Id": "98"
+        },
+        {
+          "Type": "6  ",
+          "Names": "DAGHISTANI",
+          "Names2L": "داغستاني ",
+          "Id": "99"
+        },
+        {
+          "Type": "6  ",
+          "Names": "DJIBOUTIAN",
+          "Names2L": "جيبوتي ",
+          "Id": "100"
+        },
+        {
+          "Type": "6  ",
+          "Names": "DANISH",
+          "Names2L": "دنماركي ",
+          "Id": "101"
+        },
+        {
+          "Type": "6  ",
+          "Names": "DOMINICAN",
+          "Names2L": "دومينيكاني",
+          "Id": "102"
+        },
+        {
+          "Type": "6  ",
+          "Names": "EQUADORIAN",
+          "Names2L": "إكوادوري",
+          "Id": "103"
+        },
+        {
+          "Type": "6  ",
+          "Names": "FIJIAN",
+          "Names2L": "فيجي ",
+          "Id": "104"
+        },
+        {
+          "Type": "6  ",
+          "Names": "GABONESE",
+          "Names2L": "غابوني ",
+          "Id": "105"
+        },
+        {
+          "Type": "6  ",
+          "Names": "GHANAIAN",
+          "Names2L": "غاني ",
+          "Id": "106"
+        },
+        {
+          "Type": "6  ",
+          "Names": "GAMBIAN",
+          "Names2L": "غامبي",
+          "Id": "107"
+        },
+        {
+          "Type": "6  ",
+          "Names": "GUATEMALAN",
+          "Names2L": "غواتيمالي ",
+          "Id": "108"
+        },
+        {
+          "Type": "6  ",
+          "Names": "HAITIAN",
+          "Names2L": "هياتي ",
+          "Id": "109"
+        },
+        {
+          "Type": "6  ",
+          "Names": "HONG KONG",
+          "Names2L": "هونج كونج ",
+          "Id": "110"
+        },
+        {
+          "Type": "6  ",
+          "Names": "DUTCH",
+          "Names2L": "هولندي ",
+          "Id": "111"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ICELANDIC",
+          "Names2L": "ايسلندي ",
+          "Id": "112"
+        },
+        {
+          "Type": "6  ",
+          "Names": "IVORY COAST",
+          "Names2L": "ساحل العاج",
+          "Id": "113"
+        },
+        {
+          "Type": "6  ",
+          "Names": "JAMAICAN",
+          "Names2L": "جمايكي ",
+          "Id": "114"
+        },
+        {
+          "Type": "6  ",
+          "Names": "NORTH KOREAN",
+          "Names2L": "كوري شمالي ",
+          "Id": "115"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SOUTH KOREAN",
+          "Names2L": "كوري جنوبي ",
+          "Id": "116"
+        },
+        {
+          "Type": "6  ",
+          "Names": "LAOTIAN",
+          "Names2L": "لاوسي ",
+          "Id": "117"
+        },
+        {
+          "Type": "6  ",
+          "Names": "LIBERIAN",
+          "Names2L": "لايبيري ",
+          "Id": "118"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MAURACIUS",
+          "Names2L": "",
+          "Id": "119"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MAURITIAN",
+          "Names2L": "",
+          "Id": "120"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MADAGASCAN",
+          "Names2L": "مدغشقر ",
+          "Id": "121"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MONGOLIAN",
+          "Names2L": "منغولي ",
+          "Id": "122"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MALDIVIAN",
+          "Names2L": "مالديفي ",
+          "Id": "123"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MALI",
+          "Names2L": "مالي",
+          "Id": "124"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MALTAN",
+          "Names2L": "مالطي",
+          "Id": "125"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MALAWIAN",
+          "Names2L": "مالاوي ",
+          "Id": "126"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MONACCAN",
+          "Names2L": "موناكي ",
+          "Id": "127"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MAURITANIAN",
+          "Names2L": "موريتاني ",
+          "Id": "128"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MEXICAN",
+          "Names2L": "مكسيكي ",
+          "Id": "129"
+        },
+        {
+          "Type": "6  ",
+          "Names": "MOZAMBIQUAN",
+          "Names2L": "موزامبيقي ",
+          "Id": "130"
+        },
+        {
+          "Type": "6  ",
+          "Names": "NECARAGUAN",
+          "Names2L": "نيكاراغوي ",
+          "Id": "131"
+        },
+        {
+          "Type": "6  ",
+          "Names": "NEPALESE",
+          "Names2L": "نيبالي ",
+          "Id": "132"
+        },
+        {
+          "Type": "6  ",
+          "Names": "NORWEGIAN",
+          "Names2L": "نيرويجي ",
+          "Id": "133"
+        },
+        {
+          "Type": "6  ",
+          "Names": "PANAMIAN",
+          "Names2L": "بانامي ",
+          "Id": "134"
+        },
+        {
+          "Type": "6  ",
+          "Names": "POLISH",
+          "Names2L": "بولندي",
+          "Id": "135"
+        },
+        {
+          "Type": "6  ",
+          "Names": "PORKINAFASO",
+          "Names2L": "بوركيني",
+          "Id": "136"
+        },
+        {
+          "Type": "6  ",
+          "Names": "PERUVIAN",
+          "Names2L": "بيرو",
+          "Id": "137"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SOUTH AFRICAN",
+          "Names2L": "جنوب افريقي ",
+          "Id": "138"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SAMOA",
+          "Names2L": "",
+          "Id": "139"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SCOTTISH",
+          "Names2L": "اسكوتلندي ",
+          "Id": "140"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SENEGAL",
+          "Names2L": "سنغالي ",
+          "Id": "141"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SINGAPOREAN",
+          "Names2L": "سنغافوري ",
+          "Id": "142"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SEYCHELLES",
+          "Names2L": "",
+          "Id": "143"
+        },
+        {
+          "Type": "6  ",
+          "Names": "TOBAGONIAN",
+          "Names2L": "توباغوني",
+          "Id": "144"
+        },
+        {
+          "Type": "6  ",
+          "Names": "TOGOLESE",
+          "Names2L": "توجوي",
+          "Id": "145"
+        },
+        {
+          "Type": "6  ",
+          "Names": "THAI",
+          "Names2L": "تايلاندي ",
+          "Id": "146"
+        },
+        {
+          "Type": "6  ",
+          "Names": "TUNISIAN",
+          "Names2L": "تونسي ",
+          "Id": "147"
+        },
+        {
+          "Type": "6  ",
+          "Names": "UGANDAN",
+          "Names2L": "اوغندي ",
+          "Id": "148"
+        },
+        {
+          "Type": "6  ",
+          "Names": "UKRAIN",
+          "Names2L": "اوكراني ",
+          "Id": "149"
+        },
+        {
+          "Type": "6  ",
+          "Names": "URUGUAYAN",
+          "Names2L": "أورجواي",
+          "Id": "150"
+        },
+        {
+          "Type": "6  ",
+          "Names": "UZBEKISTAN",
+          "Names2L": "اوزباكستاني ",
+          "Id": "151"
+        },
+        {
+          "Type": "6  ",
+          "Names": "VENENZUELAN",
+          "Names2L": "فنزولي ",
+          "Id": "152"
+        },
+        {
+          "Type": "6  ",
+          "Names": "VIETNAMESE",
+          "Names2L": "فيتنامي ",
+          "Id": "153"
+        },
+        {
+          "Type": "6  ",
+          "Names": "WEST INDIAN",
+          "Names2L": "هندي غربي",
+          "Id": "154"
+        },
+        {
+          "Type": "6  ",
+          "Names": "YUGOSLAVIAN",
+          "Names2L": "يوغسلافي ",
+          "Id": "155"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ZAMBIAN",
+          "Names2L": "زامبي",
+          "Id": "156"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ZIMBABWEAN",
+          "Names2L": "زمبابوي",
+          "Id": "157"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ZAIRE",
+          "Names2L": "زائيري ",
+          "Id": "158"
+        },
+        {
+          "Type": "6  ",
+          "Names": "OTHER",
+          "Names2L": "أخرى",
+          "Id": "159"
+        },
+        {
+          "Type": "6  ",
+          "Names": "BRITISH",
+          "Names2L": "بريطاني",
+          "Id": "160"
+        },
+        {
+          "Type": "6  ",
+          "Names": "PALESTINIAN",
+          "Names2L": "فلسطيني ",
+          "Id": "161"
+        },
+        {
+          "Type": "6  ",
+          "Names": "KOREAN",
+          "Names2L": "كوري ",
+          "Id": "162"
+        },
+        {
+          "Type": "6  ",
+          "Names": "AZERBAIJAN",
+          "Names2L": "أذربيجاني",
+          "Id": "163"
+        },
+        {
+          "Type": "6  ",
+          "Names": "TURKISTANI",
+          "Names2L": "تركستاني ",
+          "Id": "164"
+        },
+        {
+          "Type": "6  ",
+          "Names": "TURKMENISTAN",
+          "Names2L": "تركمنستاني ",
+          "Id": "165"
+        },
+        {
+          "Type": "6  ",
+          "Names": "SIERRA LEONE",
+          "Names2L": "سيراليوني ",
+          "Id": "166"
+        },
+        {
+          "Type": "6  ",
+          "Names": "KOSOVO",
+          "Names2L": " ",
+          "Id": "167"
+        },
+        {
+          "Type": "6  ",
+          "Names": "KAZAKHSTAN",
+          "Names2L": " ",
+          "Id": "168"
+        },
+        {
+          "Type": "6  ",
+          "Names": "CZECH",
+          "Names2L": " ",
+          "Id": "169"
+        },
+        {
+          "Type": "6  ",
+          "Names": "ESTONIA",
+          "Names2L": " ",
+          "Id": "170"
+        },
+        {
+          "Type": "6  ",
+          "Names": "IRELAND",
+          "Names2L": " ",
+          "Id": "171"
+        },
+        {
+          "Type": "6  ",
+          "Names": "Grenada",
+          "Names2L": " ",
+          "Id": "172"
+        },
+        {
+          "Type": "6  ",
+          "Names": "TAJIKISTAN",
+          "Names2L": " ",
+          "Id": "173"
+        }
+      ]
+    },
+    {
+      "Type": "9",
+      "TableName": "Relations",
+      "DemoGraphicsData": [
+        {
+          "Type": "9  ",
+          "Names": "FRIEND",
+          "Names2L": "صديق",
+          "Id": "27"
+        },
+        {
+          "Type": "9  ",
+          "Names": "RELATIVE",
+          "Names2L": "",
+          "Id": "28"
+        }
+      ]
+    },
+    {
+      "Type": "10",
+      "TableName": "Religions",
+      "DemoGraphicsData": [
+        {
+          "Type": "10 ",
+          "Names": "Muslim",
+          "Names2L": "",
+          "Id": "2"
+        },
+        {
+          "Type": "10 ",
+          "Names": "Non Muslim",
+          "Names2L": "",
+          "Id": "36"
+        }
+      ]
+    },
+    {
+      "Type": "12",
+      "TableName": "Titles",
+      "DemoGraphicsData": [
+        {
+          "Type": "12 ",
+          "Names": "MR.",
+          "Names2L": "",
+          "Id": "1"
+        },
+        {
+          "Type": "12 ",
+          "Names": "MS.",
+          "Names2L": "",
+          "Id": "2"
+        },
+        {
+          "Type": "12 ",
+          "Names": "Baby",
+          "Names2L": "",
+          "Id": "17"
+        },
+        {
+          "Type": "12 ",
+          "Names": "Dr",
+          "Names2L": "",
+          "Id": "18"
+        },
+        {
+          "Type": "12 ",
+          "Names": "Mrs",
+          "Names2L": "",
+          "Id": "28"
+        }
+      ]
+    }
+  ],
+  "Code": 200,
+  "Status": "Success",
+  "Message": "",
+  "Message2L": ""
+}

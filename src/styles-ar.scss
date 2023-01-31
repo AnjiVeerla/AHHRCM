@@ -1,0 +1,17 @@
+// @import"~bootstrap/dist/css/bootstrap.rtl.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./assets/styles/scss/fonts";
+@import"./assets/styles/scss/colors";
+@import"./assets/styles/scss/_buttons";
+@import"./assets/styles/scss/form";
+@import"./assets/styles/scss/table";
+@import"./assets/styles/scss/modal";
+@import"./assets/styles/scss/login";
+@import"./assets/styles/scss/header";
+@import"./assets/styles/scss/common";
+@import"./assets/styles/style-AR.css";
+
+
+.required-asterisk {
+    color: #d00;
+}

@@ -1,0 +1,33 @@
+VIP/Employee -> only one should select
+VIP -> Selcted -> In left side pannel -> VIP Label shpuld be dis[played]
+middle name -> for family & Grand
+Employee -> Selcted -> In left side pannel -> Employee Label shpuld be dis[played]
+
+DOB -> Calendar
+
+NationalID --> SSN
+
+country serach has to be remove and field should be disable
+state field should be disable
+
+Eligiblity -> By default -> Self -> checked
+
+
+martial staus , Area under address, Email -> Non mandatory
+
+mobile -> 10 digits & start digit -> 0/5 only allow
+nationalid -> 10 digits & start digit -> 1/2 only allow
+
+
+27-07-22:
+1. Date selection -> Format & Max date, Time is not required -> Calendar change
+2. City Smart serach need to be change as per new SS.
+3. Coutry/city/state -> should select by the user
+4. Area master data should be in Camel case
+5. Toastr msg to be change
+6. Details under picture to be cleared
+7. Cursor point on every control
+8. Validation -> Highlight the border
+9. Length of the VIP & Emplyee div selection
+10. Fetching -> VIP Selection not happening & Not showing in left side
+11. Validation errors should not show after submit & closing the modal.

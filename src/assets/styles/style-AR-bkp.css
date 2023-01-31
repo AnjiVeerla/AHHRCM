@@ -1,0 +1,564 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap");
+html {
+  direction: rtl !important;
+  font-family: 'Tajawal', sans-serif !important;
+  font-size: 18px !important;
+}
+
+body,
+h1, h2, h3, h4, p {
+  font-family: 'Tajawal', sans-serif !important;
+}
+
+/* Nav Menu */
+
+.navbar__menu-left{
+  border-right:0;
+  margin-right:-1rem;
+  border-left:1px solid #3861B1;
+  margin-left:1rem;
+}
+.navbar__logo.mr-4{
+  margin-right:unset !important;
+  margin-left:1.5rem!important;
+}
+
+/*form*/
+label {
+  display: block;
+  text-align: right;
+}
+
+.ml-auto {
+  margin-left: unset !important;
+  margin-right: auto !important;
+}
+
+.input-group > .custom-select:not(:last-child), .input-group > .form-control:not(:last-child) {
+  border-radius: 0.2rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group-append .btn, .input-group-prepend .btn {
+  border-radius: 6px 0px 0px 6px !important;
+}
+
+/* Custom file */
+.custom-file-label {
+  padding-right: 4.5rem;
+}
+
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+  content: "تصفح";
+  right: unset;
+  left: 0;
+  border-radius: 0.25rem 0 0 0.25rem;
+  margin-left: -1px;
+}
+
+.custom-control {
+  text-align: right;
+  float: right;
+}
+
+.custom-control-label {
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
+.custom-checkbox .custom-control-label::before,
+.custom-radio .custom-control-label::before {
+  left: unset;
+  right: -1.25rem;
+}
+
+.custom-control-label::after {
+  left: unset;
+  right: -1.25rem;
+}
+
+.custom-checkbox {
+  margin-right: 1rem;
+}
+
+/* form css end */
+.dashboardModal__right-wrapper .right-wrapper__card {
+  border-right: unset;
+  padding-right: unset;
+  border-left: 1px solid #C5E0E1;
+  padding-left: 1.5rem;
+}
+
+.dashboardModal__right-wrapper .right-wrapper__card-content {
+  text-align: right;
+}
+
+.patient-content .patient-content-heading {
+  text-align: right;
+}
+
+.section-header {
+  border-left: unset;
+  border-right: 2px solid #168289;
+}
+
+.sub-header__left {
+  text-align: right;
+}
+
+.sub-header__actions a {
+  text-align: right;
+}
+
+.patient-content {
+  margin-right: 0;
+}
+
+.nav-tabs {
+  margin-left: unset;
+  margin-right: -1.25rem;
+  padding-right: 0.8rem;
+}
+
+.nav-item:first-child {
+  margin-left: 5px;
+}
+@media screen and (max-width: 1180px) {
+  .nav-tab-wrapper{
+    margin-left: 0rem;
+    margin-right:-1.25rem;
+  }
+}
+/* Margins & Paddings */
+.ml-2 {
+  margin-left: unset !important;
+  margin-right: 0.5rem !important;
+}
+
+.mr-2 {
+  margin-right: 1rem !important;
+  margin-left: 0.5rem !important;
+}
+
+.invalid-feedback {
+  text-align: right;
+}
+
+/* Table */
+.table th, .table td {
+  text-align: right;
+}
+.table tr th:first-child{
+  border-top-left-radius: unset;
+  border-top-right-radius: 0.25rem;
+}
+
+.ipnut-upload-text::before {
+  content: 'تحميل';
+}
+
+.input-file-btn::before {
+  content: 'حمل الصورة';
+}
+
+.pl-1 {
+  /* padding-left: 0.75rem !important; */
+  padding-left:0rem !important;
+  padding-right: 0.25rem !important;
+}
+
+.pr-1 {
+  /* padding-right: 0.75rem !important; */
+  padding-right:0rem !important;
+  padding-left: 0.25rem !important;
+}
+
+.input-group:not(.has-validation) > .form-control:not(:last-child) {
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  background-position: left calc(0.375em + 0.1875rem) center;
+  padding-left: calc(1.5em + 0.75rem) !important;
+  padding-right: 0.5rem !important;
+}
+
+.mat-checkbox-layout .mat-checkbox-label {
+  margin-right: 0.25rem;
+  font-family: 'Tajawal', sans-serif !important;
+}
+
+.toast-title {
+  text-align: right;
+}
+
+.toast-message {
+  text-align: right;
+}
+
+.toast-container .ngx-toastr {
+  padding-left: 15px;
+  padding-right: 50px;
+  background-position: 95% center;
+}
+
+.ngx-toaster {
+  background-position: right ceter;
+}
+
+.ipnut-upload-text::before {
+  content: 'تحميل';
+}
+
+.input-file-btn::before {
+  content: 'حمل الصورة';
+}
+
+.pl-1 {
+  padding-left: 0.75rem !important;
+  padding-right: 0.25rem !important;
+}
+
+.pr-1 {
+  padding-right: 0.75rem !important;
+  padding-left: 0.25rem !important;
+}
+
+.input-group:not(.has-validation) > .form-control:not(:last-child) {
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  background-position: left calc(0.375em + 0.1875rem) center;
+  padding-left: calc(1.5em + 0.75rem) !important;
+  padding-right: 0.5rem !important;
+}
+.ipnut-upload-text::before {
+  content: 'تحميل';
+}
+
+.input-file-btn::before {
+  content: 'حمل الصورة';
+}
+
+.pl-1 {
+  padding-left: 0.75rem !important;
+  padding-right: 0.25rem !important;
+}
+
+.pr-1 {
+  padding-right: 0.75rem !important;
+  padding-left: 0.25rem !important;
+}
+
+.input-group:not(.has-validation) > .form-control:not(:last-child) {
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  background-position: left calc(0.375em + 0.1875rem) center;
+  padding-left: calc(1.5em + 0.75rem) !important;
+  padding-right: 0.5rem !important;
+}
+
+.was-validated select.form-control:invalid, select.form-control.is-invalid {
+  background-position: left 1.5rem center;
+  padding-left: 3rem !important;
+  padding-right: 1.75rem !important;
+}
+
+.mat-checkbox-layout .mat-checkbox-label {
+  margin-right: 0.25rem;
+}
+
+.toast-title {
+  text-align: right;
+}
+
+.toast-message {
+  text-align: right;
+}
+
+.toast-container .ngx-toastr {
+  padding-left: 15px;
+  padding-right: 50px;
+  background-position: 95% center;
+}
+
+.ngx-toaster {
+  background-position: right center !important;
+}
+
+.modalToaster .modal-body {
+  background-position-x: calc(100% - 24px) !important;
+  text-align: right;
+  padding-left: 24px;
+  padding-right: 64px;
+}
+
+.eyeIcon {
+  right: unset;
+  left: 5px;
+}
+
+.Formvalidation .form-control.is-invalid {
+  background-position: left 1rem center;
+  padding-right: 0.5rem !important;
+  padding-left: 3rem !important;
+}
+
+.FormPasswordValidation .form-control.is-invalid {
+  background-position: left 1.5rem center;
+  padding-right: 1.75rem !important;
+  padding-left: 3.5rem !important;
+}
+
+/**
+Login Page icons alignment
+**/
+.form-group-icon img {
+  right: 0.25rem;
+}
+
+.form-group-icon .form-control {
+  padding-left: unset !important;
+  padding-right: 1.75rem !important;
+}
+
+.form-group-icon select {
+  padding-left: unset !important;
+  padding-right: 1.4rem !important;
+}
+
+.floatR-AR {
+  float: right;
+}
+
+table tr td .custom-control {
+  padding-left: 1rem;
+}
+
+.pL-0 {
+  padding-left: 0;
+}
+
+.align-rightAR {
+  text-align: right !important;
+}
+.ar-text-ltr {
+  direction: ltr !important;
+  text-align: right !important;
+}
+
+.mat-tree-node[aria-level="2"] {
+  padding-right: 32px !important;
+  padding-left: unset !important;
+}
+
+.form-check {
+  padding-left: unset !important;
+  padding-right: 1.25rem !important;
+}
+
+.mat-tree-node[aria-level="2"] {
+  padding-right: 32px !important;
+  padding-left: unset !important;
+}
+
+.form-check {
+  padding-left: unset !important;
+  padding-right: 1.25rem !important;
+}
+
+.big-title.fullWidth {
+  width: calc(100% + 51px);
+  margin-right: -25px;
+}
+
+.nav-tabs-2 {
+  margin-left: unset !important;
+  margin-right: -1.25rem;
+  padding-right: 0;
+}
+
+@media screen and (max-width: 1024px){
+  .nav-tab-wrapper .nav-tabs-noscroll{
+    margin-left: 0 !important;
+    margin-right: 0;
+  }
+}
+
+.nav-tabs-2 .nav-item {
+  -webkit-transform: skewX(-16deg);
+  transform: skewX(-16deg);
+}
+
+.nav-tabs-2 .nav-item:first-child {
+  margin-right: -0.25rem;
+  margin-left: -0.275rem;
+}
+
+.nav-tabs-2 .nav-link {
+  -webkit-transform: skewX(16deg) translateX(8px);
+  transform: skewX(16deg) translateX(8px);
+}
+
+.text-left {
+  text-align: right !important;
+}
+
+.table-treeview tr .action__btns {
+  right: unset !important;
+  left: 0.25rem;
+}
+
+.clr-wrapper-card hr {
+  margin-right: -0.75rem;
+}
+
+.search-wrapper p {
+  text-align: right;
+}
+
+.card-header div {
+  text-align: right;
+
+
+}
+.input-group.Formvalidation .form-control.is-invalid {
+  background-position: left calc(0.375em + 0.1875rem) center;
+}
+
+.custom-file-label {
+  padding-right: 1rem;
+}
+ejs-datepicker > .e-input-group > input,
+input.datetime {
+  direction: ltr !important;
+  text-align: right !important;
+}
+
+.form-text .text-muted {
+  text-align: right;
+}
+
+.nl-req {
+  left: 4px !important;
+  right: unset !important;
+}
+.text-right{
+  text-align:left !important;
+}
+.ar-float-left{
+float:left !important;
+}
+
+.pr-0, .px-0{
+padding-right: 15px !important;
+padding-left:0 !important;
+}
+.pl-0, .px-0{
+  padding-left:15px !important;
+  padding-right:0 !important;
+}
+
+
+@media (min-width: 992px){
+.offset-lg-2 {
+    margin-left: 16.666667%;
+    margin-left: usnet;
+    margin-right: 16.666667%;
+}
+}
+@media (min-width: 1200px){
+  .offset-xl-0{
+    margin-left:0;
+    margin-right:0;
+  }
+}
+.mx-ar-0{
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+
+/**
+Table Tree View
+**/
+.table-treeview .lvl-2-items tr td:first-child {
+  padding-left: 1.5rem;
+  padding-right:0;
+}
+
+.table-treeview .lvl-3-items tr td:first-child {
+  padding-left: 3rem;
+  padding-right:0;
+}
+
+.table-treeview .lvl-4-items tr td:first-child {
+  padding-left: 4.5rem;
+  padding-right:0;
+}
+
+.table-treeview .lvl-5-items tr td:first-child {
+  padding-left: 6rem;
+  padding-right:0;
+}
+
+
+
+.table-treeview .pr-120{
+  padding-right:unset !important;
+  padding-left:190px !important;
+}
+.table-treeview .pr-150{
+  padding-right:unset !important;
+  padding-left:150px !important;
+}
+.table-treeview .pr-222{
+  padding-right:unset !important;
+  padding-left:222px !important;
+}
+.table-treeview .pr-315{
+  padding-right:unset !important;
+  padding-left:340px !important;
+}
+.table-treeview-full{
+  margin-left: unset;
+  margin-right: -20px;
+}
+
+
+/** Pharmacy Returns Sticky **/
+.sticky-slno{
+  left:unset;
+  right:0px;
+}
+.sticky-input{
+  left:unset;
+  right:47px;
+}
+.sticky-action{
+  left:0px;
+}
+.sticky-amount{
+  right:unset;
+  left: 61px;
+}
+
+.sticky-pat{
+  right:unset;
+  left:61px;
+}
+.sticky-amount-pat{
+  right:unset;
+  left: 157px;
+}
+/** Pharmacy Returns Sticky Close **/
+
+
+/*# sourceMappingURL=styles-AR.css.map */

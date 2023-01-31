@@ -1,0 +1,463 @@
+
+body{
+    background-color: $neutral-50;
+}
+// Page Header
+.page-header{
+    background-color: #FCFCFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    border-bottom:1px solid #EBEDEF;
+    padding:0.75rem 0.5rem;
+    z-index:998;
+    .page-heading{
+        margin:0;
+        font-size: 1.25rem;
+        color:$primary-600;
+        font-weight: $medium;
+    }
+}
+
+	//Date & Time
+    .date-time{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding:0.25rem 0.5rem;
+        // background-color: #EFF0F1;
+        gap:0.5rem;
+        border-radius: 0.5rem;
+        white-space: nowrap;
+        .details{
+            display: flex;
+            flex-direction: column;
+            gap:0.25rem;
+            p{
+                margin-bottom:0;
+                color:$primary-600;
+            }
+        }
+    }
+
+//Container
+
+.container__wrapper{
+    border-radius: 0.75rem; 
+    background-color: $white; 
+    height:calc(100vh - 5.75rem);
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        width: 0.25rem;
+      }
+      
+      /* Track */
+     &::-webkit-scrollbar-track {
+        background: $primary-100; 
+        border-radius: 0.25rem;
+        margin-top:0.125rem;
+        margin-bottom:0.125rem;
+      }
+       
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: $primary-400; 
+        border-radius: 0.5rem;
+      }
+      
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: $primary-400; 
+      }
+  }
+  .container-body{
+      padding:1rem;
+  }
+
+// Section Heading
+.section__heading{
+    display: flex;
+    align-items: center;
+    padding:0.5rem;
+    border-left:0.125rem solid $primary-400;
+    background-color: $primary-100;
+    h3{
+        color:$primary-600;
+        font-size: 1rem;
+        font-weight: $regular;
+        margin-bottom:0;
+    }
+}
+
+//Sub-heading
+.sub-heading{
+    background-color: $neutral-50;
+    border-left:0.25rem solid $primary-600;
+    padding:0.5rem;
+    h4{
+        color:$primary-500;
+        font-size:1rem;
+        font-weight: $regular;
+        margin-bottom:0;
+    }
+}
+
+//Actions
+.actions{
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+}
+
+//Accordion Item
+.accordion-item{
+    border:1px solid $primary-300;
+    border-radius: 0.75rem !important;
+    background-color: #FBFDFE;
+    &.border-radius-0{
+        border-radius: 0 !important;
+    }
+}
+.accordion-heading{
+    padding:0.25rem 1rem;
+}
+.accordion-body{
+    border-top:1px solid $primary-300;
+    padding:1rem;
+}
+//Accordion menu
+.accordion-menu{
+
+    .accordion-item{
+        border:unset;
+        border-radius: unset;
+    }
+    .accordion-header{
+        margin-bottom:0.25rem;
+    }
+    .accordion-button{
+        background-color: $primary-200;
+        color:$primary-600;
+        border-radius:0.5rem;
+        &:focus{
+            box-shadow: unset;
+        }
+        &::after{
+            // background-image:url('../../Assets/images/icons/arrow-down-fill.svg');
+            background-image: url('../../images/icons/arrow-down-fill.svg');
+        }
+        &.collapsed{
+            background-color: $primary-100;
+            border-radius:0.5rem;
+            color:$primary-600;
+            font-size: 1rem;
+            &:focus{
+                box-shadow: unset;
+            }
+        }
+    }
+    .accordion-body{
+        border:unset;
+        padding:0.75rem 1rem;
+        a{
+            display: block;
+            color:$primary-600;
+            padding: 0.5rem 0.75rem;
+            text-decoration: none;
+            font-size: 0.845rem;
+            transition: all 300ms ease-in-out;
+            &:hover{
+                transform: translateX( 0.65rem);
+                color:$primary-700;
+            }
+            &.active{
+                text-decoration: underline;
+                font-weight: $medium;
+                color:$primary-700;
+            }
+        }
+    }
+}
+
+//Eligibility Info
+.eligibility-info{
+    margin-bottom:2rem;
+    margin-top:1rem;
+    .eligility-card{
+        border-radius:1rem;
+        background-color: $neutral-100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding:1.5rem;
+        height: 100%;
+        h4{
+            font-size:3rem;
+            margin-bottom:0rem;
+            span{
+                font-size:1rem;
+                text-transform: uppercase;
+            }
+        }
+        p{
+            font-size:0.845rem;
+            margin-bottom: 0;
+        }
+        &.card-1{
+            background-color: #ECECF9;
+            h4{
+                color:#6666CC;
+            }
+        }
+        &.card-2{
+            background-color: #DAEEF2;
+            h4{
+                color: #33808E;
+            }
+        }
+        &.card-3{
+            background-color: #FCEBE8;
+            display: block;
+            padding-top:2rem;
+            .label-heading{
+                color:#BD7264;
+            }
+        }
+    }
+}
+
+//Toggle Arrow
+.toggle-arrow{
+    padding-left:0;
+    padding-right:0;
+    transform: rotate(180deg);
+    transition: all 300ms ease-in-out;
+    &.collapsed{
+        transform: rotate(0deg);
+    }
+}
+// Patient Registration
+.regist__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top:2rem;
+    @media (max-width:1199px) {
+        flex-direction: row;  
+        padding-top:1rem; 
+        background-color: $white;
+        margin-bottom:0.75rem;
+        border-radius: 0.75rem;
+        gap:2.5rem;
+    }
+    .navbar{
+        display: flex;
+        gap:0.25rem;
+        .nav{
+            display: flex;
+            gap:0.5rem;
+            @media (max-width:1199px) {
+                flex-direction: column;  
+            }
+            .nav-item{
+                flex:1;
+            }
+            .nav-link{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                border-radius: 0.75rem;
+                gap:0.5rem;
+                color:$primary-600;
+                flex:1;
+                span{
+                    font-size:0.875rem;
+                    white-space:nowrap;
+                }
+                &:hover{
+                    background-color: $primary-200;
+                }
+                &.active{
+                    background-color: $primary-600;
+                    color:$primary-50;
+                    img{
+                        filter: brightness(0) saturate(100%) invert(89%) sepia(6%) saturate(1617%) hue-rotate(189deg) brightness(112%) contrast(94%);
+                    }
+                }
+            }
+        }
+    }
+}
+.patient__details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    @media (max-width:1199px) {
+        flex-direction: row; 
+        align-items: flex-start;  
+        gap:1rem;
+    }
+    .patient__profile{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        @media (max-width:1199px) {
+            margin-top:1.25rem;
+        }
+    }
+    .patient__photo{
+        width: 4rem;
+        height: 4rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border:2px solid $primary-200;
+        outline:0.75rem solid $primary-100;
+        border-radius: 50%;
+        box-shadow: 0px 0px 0px 1.25rem $primary-50;
+        margin-bottom:1.25rem;
+    }
+    .patient__info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media (max-width:1199px) {
+            align-items: flex-start;  
+        }
+    }
+    h3{
+        text-align: center;
+        color: $neutral-700;
+        font-size:0.875rem;
+        font-weight: bold;
+    }
+    p{
+        color:$neutral-700;
+        font-size:0.75rem;
+        margin-bottom:0.5rem;
+    }
+    .employee__badge{
+        width: 90px;
+        display: flex;
+        padding:0.25rem 1rem;
+        border-radius: 5rem;
+        background-color: $primary-300;
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.14);
+        font-size:0.75rem;
+        margin-top:-1.75rem;
+        color:$primary-700;
+        min-width:5.75rem;
+        align-items:center;
+        justify-content: center;
+    }
+    .vip__badge{
+        position: absolute;
+        top:-1.5rem;
+        left:50%;
+        transform:translateX(-50%);
+    }
+}
+qr-code {
+    img {
+        width: 4rem;
+        height: auto;
+    }
+}
+/**
+LOADER
+**/
+.loader-wrapper{
+    background-color: #0c181bc9;
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .loader {
+        width: 60px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:0.25rem;
+
+        & > div {
+          height: 100%;
+          width: 8px;
+          border-radius: 0.25rem;
+          display: inline-block;
+          animation: delay 1.25s infinite ease-in-out;
+        }
+        
+        .bar1{
+          background-color: #8e60c3 ;
+        }
+        .bar2{
+          background-color: #09b7bf;
+          animation-delay: -0.7s;
+        }
+        .bar3{
+          background-color: #90d36b;
+          animation-delay: -0.6s;
+        }
+        .bar4{
+          background-color: #f2d40d;
+          animation-delay: -0.5s;
+        }
+        .bar5{
+          background-color: #fcb12b;
+          animation-delay: -0.4s;
+        }
+        .bar6{
+          background-color: #ed1b72;
+          animation-delay: -0.3s;
+        }
+      }
+      @keyframes delay {
+        0%, 40%, 100% { 
+          transform: scaleY(0.05);
+        }  20% { 
+          transform: scaleY(1.0);
+        }
+      }
+}
+
+
+.rounded-pill{
+    background: #ECF6F8;
+    color:#368796;
+    min-width: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:0.25rem;
+    border-radius: 0.5rem !important;
+    font-size: 1.7rem;
+}
+.card-box{
+    border:1px solid #B4DDE4;
+    border-left:0;
+    border-right: 0;
+    padding:0.5rem;
+}
+.heading{
+    color:$primary-600;
+    font-size: 1rem;
+    font-weight: $medium;
+}
+.bg-color-1{
+background-color: #ECF6F8 !important;
+}
