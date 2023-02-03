@@ -6,6 +6,7 @@ import { LoginComponent } from './common/login/login.component';
 import { OPBillingModule } from './front-office/opbilling/opbilling.module';
 import { CompanyComponent } from './contract-management/company/company.component';
 import { PaymentComponent } from './contract-management/payment/payment.component';
+import { CompanyConfigurationComponent } from './contract-management/company-configuration/company-configuration.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
     path: 'company',
     component:CompanyComponent
   },  
+  {
+    path: 'company-configuration',
+    component:CompanyConfigurationComponent
+  }, 
   {
     path: 'payment',
     component:PaymentComponent

@@ -1,2 +1,404 @@
-<p>company-configuration works!</p>
-<p>company-configuration works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Company Configuration</title>
+</head>
+<body>
+
+
+<!--Container-->
+<div class="col-xl-12 container-fluid mt-4" >
+    <div class="container__wrapper" >
+    <div class="page-header sticky-top mx-3">
+        <h2 class="page-heading">Company Configuration</h2>
+        <div class="actions ms-auto">
+            <button class="btn btn-main-outline">Add Service</button>
+            <button class="btn btn-main-outline">Company Documents</button>
+            <button class="btn btn-main-outline">Clear</button>
+            <button class="btn btn-main-outline">Modify</button>
+            <button class="btn btn-main-outline">Save</button>
+        </div>
+    </div>
+
+    <div class="p-3">
+        <ul class="nav nav-tabs d-flex gap-3" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="address-tab" data-bs-toggle="tab" data-bs-target="#address" type="button" role="tab" aria-controls="address" aria-selected="true">Address & Processing</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="specialization-tab" data-bs-toggle="tab" data-bs-target="#specialization" type="button" role="tab" aria-controls="specialization" aria-selected="false">Specialization</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="agreement-tab" data-bs-toggle="tab" data-bs-target="#agreement" type="button" role="tab" aria-controls="agreement" aria-selected="false">Agreement & Grade</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="config-tab" data-bs-toggle="tab" data-bs-target="#config" type="button" role="tab" aria-controls="config" aria-selected="false">LOA Config</button>
+            </li>
+        </ul>
+          
+        <div class="tab-content mt-4">
+            <div class="tab-pane active" id="address" role="tabpanel" aria-labelledby="address-tab">
+                <div class="row">
+                    <div class="col-lg-4 address_card">
+                        <div class="bg-light rounded-3 p-3 pb-5">
+                            <div class="search_wrapper d-flex align-items-center position-relative">
+                                <img  class="" src="/assets/images/icons/icon-search.svg" alt="">
+                                <input type="text" class="form-control rounded-5 ps-5 py-3 bg-light-primary" placeholder="Code, Company Name">
+                            </div>
+
+                            <div class="mt-3 address_bar position-relative">
+                                <div class="address_icon bg-light-primary mx-auto d-flex align-items-center justify-content-center">
+                                    <img src="/assets/images/user-photo.png" alt="">
+                                </div>
+                                <p class=""> STN0 </p>
+                            </div>
+                            <h5 class="clr-primary text-center mt-2">Saudi Telecom Co poll3 NCCI</h5>
+                            <h6 class="text-center clr-primary">Address line-1,Address line-2, <br> State, City, Country, Pincode. </h6>
+                            <hr class="w-25 mx-auto" />
+                            <div class="d-flex align-items-center mb-2 col-lg-5 col-md-8 mx-auto">
+                                <img class="me-2" src="/assets/images/icons/icon-facility.svg" alt="">
+                                <div class="">
+                                    <p class="mb-0">Phone</p>
+                                    <p class="clr-primary mb-0">091 234 5896</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center col-lg-5 col-md-8 mx-auto">
+                                <img class="me-2" src="/assets/images/icons/icon-facility.svg" alt="">
+                                <div class="">
+                                    <p class="mb-0">Email</p>
+                                    <p class="clr-primary mb-0">Sauditelcome@ston.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <div class="accordion card-3d" id="contract">
+                            <div class="accordion-item border-0">
+                                <div class="page-header card-3d-header" data-bs-toggle="collapse"  aria-expanded="true" aria-controls="collapseOne">
+                                    <h2 class="page-heading">
+                                        Contract Details
+                                    </h2>
+                                    <div class="actions ms-auto">
+                                        <button class="btn btn-icon-3d" data-bs-toggle="collapse" data-bs-target="#contractBody" aria-expanded="true" aria-controls="collapseOne">
+                                            <img src="assets/images/icons/icon-arrow-up.svg" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                              <div id="contractBody" class="accordion-collapse collapse show position-relative" aria-labelledby="headingOne" data-bs-parent="#contractBody">
+                                <div class="card-3d-body p-3">
+                                    <div class="row align-items-center g-3">
+                                        <div class="col-md-4">
+                                            <div class="">
+                                                <label for="" class="form-label">Contract date</label>
+                                                <input type="date" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="">
+                                                <label for="" class="form-label">Valid from</label>
+                                                <input type="date" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="">
+                                                <label for="" class="form-label">Valid to</label>
+                                                <input type="date" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="">
+                                                <label for="" class="form-label">Credit limit</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="">
+                                                <label for="" class="form-label">Credit Balance</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="">
+                                                <label for="" class="form-label">Vat Number</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="d-flex align-items-center">
+                                                <div class="d-flex align-items-center">
+                                                    <input class="form-check-input mt-0 me-2" type="checkbox" value="" id="">
+                                                    <label class="form-label m-0 pe-2">Approval Not Applicable</label>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <input class="form-check-input mt-0 me-2" type="checkbox" value="" id="">
+                                                    <label class="form-label m-0 pe-2">UAF</label>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <input class="form-check-input mt-0 me-2" type="checkbox" value="" id="">
+                                                    <label class="form-label m-0 pe-2">Approval Required</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="d-flex align-items-center">
+                                                <input class="form-check-input mt-0 me-2" type="checkbox" value="" id="">
+                                                <label class="form-label m-0 pe-2 text-nowrap">Policy No. *</label>
+                                                <input type="text" class="form-control w-25">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="">
+                                                <label for="" class="form-label">Basic Rules</label>
+                                                <textarea type="text" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="accordion card-3d mt-3" id="invoice">
+                            <div class="accordion-item border-0">
+                                <div class="page-header card-3d-header" data-bs-toggle="collapse"  aria-expanded="true" aria-controls="collapseOne">
+                                    <h2 class="page-heading">
+                                        Invoice Processing
+                                    </h2>
+                                    <div class="actions ms-auto">
+                                        <button class="btn btn-icon-3d" data-bs-toggle="collapse" data-bs-target="#invoiceBody" aria-expanded="true" aria-controls="collapseOne">
+                                            <img src="assets/images/icons/icon-arrow-up.svg" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                              <div id="invoiceBody" class="accordion-collapse collapse show position-relative invoiceBody" aria-labelledby="headingOne" data-bs-parent="#invoiceBody">
+                                <div class="card-3d-body p-3">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                           <div class="card h-100 p-3">
+                                                <div class="mb-3">
+                                                    <label for="" required="" class="form-label">Insurance</label>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="d-flex align-items-center input-group w-50 me-3">
+                                                            <input type="text" class="form-control" placeholder="" aria-label="">
+                                                            <button class="btn btn-secondary-fill btn-icon" type="button" id="">
+                                                                <img src="assets/images/icons/icon-search.svg" alt="">
+                                                            </button>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <input class="form-check-input mt-0 me-2" type="checkbox" value="" id="">
+                                                            <label class="form-label m-0 pe-2">Self Insurance</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="" required="" class="form-label">TPA</label>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="d-flex align-items-center input-group w-50 me-3">
+                                                            <input type="text" class="form-control" placeholder="" aria-label="">
+                                                            <button class="btn btn-secondary-fill btn-icon" type="button" id="">
+                                                                <img src="assets/images/icons/icon-search.svg" alt="">
+                                                            </button>
+                                                        </div>
+                                                        <div class="d-flex align-items-center">
+                                                            <input class="form-check-input mt-0 me-2" type="checkbox" value="" id="">
+                                                            <label class="form-label m-0 pe-2">Self TPA</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="" required="" class="form-label">Template</label>
+                                                    <div class="d-flex align-items-center input-group w-50">
+                                                        <input type="text" class="form-control" placeholder="" aria-label="">
+                                                        <button class="btn btn-secondary-fill btn-icon" type="button" id="">
+                                                            <img src="assets/images/icons/icon-search.svg" alt="">
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="d-flex align-items-center">
+                                                        <input class="form-check-input mt-0 me-2" type="checkbox" value="" id="">
+                                                        <label class="form-label m-0 pe-2">Discount on Cash for OP</label>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <input class="form-check-input mt-0 me-2" type="checkbox" value="" id="">
+                                                        <label class="form-label m-0 pe-2">Discount on Cash for IP</label>
+                                                    </div>
+                                                </div>
+                                           </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card h-100 p-3">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <div class="d-flex align-items-center w-50">
+                                                        <input class="form-check-input mt-0 me-2" type="checkbox" value="" id="">
+                                                        <label class="form-label m-0 pe-2">No of OP Patients/Day</label>
+                                                    </div>
+                                                    <input type="text" class="form-control w-25" placeholder="" aria-label="">
+                                                </div>
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <div class="d-flex align-items-center w-50">
+                                                        <input class="form-check-input mt-0 me-2" type="checkbox" value="" id="">
+                                                        <label class="form-label m-0 pe-2">No of IP Patients/Day</label>
+                                                    </div>
+                                                    <input type="text" class="form-control w-25" placeholder="" aria-label="">
+                                                </div>
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <div class="d-flex align-items-center w-50">
+                                                        <!-- <input class="form-check-input mt-0 me-2" type="checkbox" value="" id=""> -->
+                                                        <label class="form-label m-0 pe-2">Consultation Per Patient Per Day</label>
+                                                    </div>
+                                                    <input type="text" class="form-control w-25" placeholder="" aria-label="">
+                                                </div>
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <div class="d-flex align-items-center w-50">
+                                                        <!-- <input class="form-check-input mt-0 me-2" type="checkbox" value="" id=""> -->
+                                                        <label class="form-label m-0 pe-2">Fixed Consultation Charges</label>
+                                                    </div>
+                                                    <input type="text" class="form-control w-25" placeholder="" aria-label="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="card p-3">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <label class="form-label m-0 pe-2">Invoices</label>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="d-flex align-items-center">
+                                                                <input class="form-check-input mt-0 me-2" type="radio" value="" id="">
+                                                                <label class="form-label m-0 pe-2">Direct</label>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <input class="form-check-input mt-0 me-2" type="radio" value="" id="">
+                                                                <label class="form-label m-0 pe-2">Insurance</label>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <input class="form-check-input mt-0 me-2" type="radio" value="" id="">
+                                                                <label class="form-label m-0 pe-2">TPA</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label class="form-label m-0 pe-2">Covering Letter</label>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="d-flex align-items-center">
+                                                                <input class="form-check-input mt-0 me-2" type="radio" value="" id="">
+                                                                <label class="form-label m-0 pe-2">Direct</label>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <input class="form-check-input mt-0 me-2" type="radio" value="" id="">
+                                                                <label class="form-label m-0 pe-2">Insurance</label>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <input class="form-check-input mt-0 me-2" type="radio" value="" id="">
+                                                                <label class="form-label m-0 pe-2">TPA</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label class="form-label m-0 pe-2">Summary Details</label>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="d-flex align-items-center">
+                                                                <input class="form-check-input mt-0 me-2" type="radio" value="" id="">
+                                                                <label class="form-label m-0 pe-2">Direct</label>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <input class="form-check-input mt-0 me-2" type="radio" value="" id="">
+                                                                <label class="form-label m-0 pe-2">Insurance</label>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <input class="form-check-input mt-0 me-2" type="radio" value="" id="">
+                                                                <label class="form-label m-0 pe-2">TPA</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="accordion card-3d mt-3" id="payment">
+                            <div class="accordion-item border-0">
+                                <div class="page-header card-3d-header" data-bs-toggle="collapse"  aria-expanded="true" aria-controls="collapseOne">
+                                    <h2 class="page-heading">
+                                        AR Payment Terms
+                                    </h2>
+                                    <div class="actions ms-auto">
+                                        <button class="btn btn-icon-3d" data-bs-toggle="collapse" data-bs-target="#paymentBody" aria-expanded="true" aria-controls="collapseOne">
+                                            <img src="assets/images/icons/icon-arrow-up.svg" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                              <div id="paymentBody" class="accordion-collapse collapse show position-relative paymentBody" aria-labelledby="headingOne" data-bs-parent="#paymentBody">
+                                <div class="card-3d-body p-3">
+                                    <div class="row g-3 align-items-center">
+                                        <div class="col-md-6">
+                                            <p class="m-0">Days waiting for confirmation from company on submission for coverage letter</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="text" value="45" class="form-control">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="m-0">Days waiting for confirmation from company on submission for coverage for renconciliation</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="text" value="45" class="form-control">
+                                        </div>
+                                    
+                                        <div class="col-md-6">
+                                            <p class="m-0">Days waiting for payment from company on completing of renconciliation</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="text" value="45" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="specialization" role="tabpanel" aria-labelledby="specialization-tab">specialization</div>
+            <div class="tab-pane" id="agreement" role="tabpanel" aria-labelledby="agreement-tab">agreement</div>
+            <div class="tab-pane" id="config" role="tabpanel" aria-labelledby="config-tab">config</div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Menu-->
+<div class="modal fade" id="mainMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollabel">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="row px-4 pt-3">
+            <div class="col-lg-8 ms-auto">
+                <div class="d-flex align-items-center">
+                    <label for="" class="form-label mb-0 px-2">Facility</label>
+                    <select name="" id="" class="form-select">
+                        <option value="">select</option>
+                        <option value="">option-1</option>
+                        <option value="">option-2</option>
+                    </select>
+                </div>
+            </div>
+         </div>
+      </div>
+    </div>
+</div>
+<!--Javascript-->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</div></body>
+</html>
+
