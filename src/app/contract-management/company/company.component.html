@@ -1,164 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../assets/styles/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/styles/style-EN.css"> -->
-    <title>Company</title>
-</head>
-<body>
-
-
 <!--Container-->
-<div class="col-xl-12 container-fluid mt-4" >
-    <div class="container__wrapper" >
-    <div class="page-header sticky-top">
-        <h2 class="page-heading">Company Master</h2>
-        <div class="actions ms-auto">
-            <button class="btn btn-main-outline" data-bs-toggle="modal" data-bs-target="#doctorAvailability">Show all Companies</button>
-            <button class="btn btn-main-outline">Confiuration</button>
-            <button class="btn btn-main-outline">Map Location</button>
-            <button class="btn btn-main-outline">Clear</button>
-            <button  class="btn btn-main-fill">Save</button>
+<div class="col-xl-12 container-fluid mt-4">
+    <div class="container__wrapper">
+        <div class="page-header sticky-top">
+            <h2 class="page-heading">Company Master</h2>
+            <div class="actions ms-auto">
+                <button class="btn btn-main-outline" data-bs-toggle="modal" data-bs-target="#doctorAvailability">Show
+                    all Companies</button>
+                <button class="btn btn-main-outline">Confiuration</button>
+                <button class="btn btn-main-outline">Map Location</button>
+                <button class="btn btn-main-outline">Clear</button>
+                <button class="btn btn-main-fill">Save</button>
+            </div>
         </div>
-    </div>
-    <form [formGroup]="companyForm" >
-    <div class="container-body">
-        <div class="row py-3 gx-4 gy-3">
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label" >Company Code</label>
-                <input type="text" class="form-control" formControlName ="fmCompanyCode" placeholder="STN0" readonly>
-                <div class="invalid-feedback">
-                    Please choose a username.
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label" required>Company Type</label>
-                <select class="form-select" formControlName ="fmCompanyType">
-                    <option value="" selected>--Select--</option>
-                    <!-- <option *ngFor="let companytype of CompanyTypes" [ngValue]="companytype.id">
-                        {{companytype.name}}</option> -->
-                </select>
-                
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label">Company Name</label>
-                <div class="input-group">
-                    <input type="text" class="form-control" formControlName ="fmCompanyName" placeholder="Company Name Search">
-                    <button class="btn btn-secondary-fill btn-icon" type="button" id="button-addon2">
-                        <img src="assets/images/icons/icon-search.svg" alt="">
-                    </button>
+        <form [formGroup]="companyForm">
+            <div class="container-body">
+                <div class="row py-3 gx-4 gy-3">
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label">Company Code</label>
+                        <input type="text" class="form-control" formControlName="fmCompanyCode" placeholder="STN0"
+                            readonly>
+                        <div class="invalid-feedback">
+                            Please choose a username.
+                        </div>
                     </div>
-            </div>
-        </div>
-        <div class="row py-3 gx-4 gy-3" id="address-details">
-            <div class="col-lg-12">
-                <div class="section__heading ">
-                    <h3 >Address Details</h3>
-                    <div class="ms-auto">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="block">
-                            <label class="form-check-label" for="block">
-                                Blocked
-                            </label>
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label" required>Company Type</label>
+                        <select class="form-select" formControlName="fmCompanyType">
+                            <option value="" selected>--Select--</option>
+                            <!-- <option *ngFor="let companytype of CompanyTypes" [ngValue]="companytype.id">
+                        {{companytype.name}}</option> -->
+                        </select>
+
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label">Company Name</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" formControlName="fmCompanyName"
+                                placeholder="Company Name Search">
+                            <button class="btn btn-secondary-fill btn-icon" type="button" id="button-addon2">
+                                <img src="assets/images/icons/icon-search.svg" alt="">
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="row py-3 gx-4 gy-3" id="address-details">
+                    <div class="col-lg-12">
+                        <div class="section__heading ">
+                            <h3>Address Details</h3>
+                            <div class="ms-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="block">
+                                    <label class="form-check-label" for="block">
+                                        Blocked
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label">Address</label>
-                <input type="text" class="form-control" formControlName ="fmCompanyAddress" placeholder="Address">
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label">Address1</label>
-                <input type="text" class="form-control" formControlName ="fmCompanyAddress1" placeholder="Address1">
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label">City</label>
-                <select name="" id="" class="form-select" formControlName="fmCompanyCity"
-                (change)="onCityChange($event)">
-                <option value="" selected translate>Select</option>
-                <!-- <option   *ngFor="let City of Cities" [ngValue]="City.CityID">
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label">Address</label>
+                        <input type="text" class="form-control" formControlName="fmCompanyAddress"
+                            placeholder="Address">
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label">Address1</label>
+                        <input type="text" class="form-control" formControlName="fmCompanyAddress1"
+                            placeholder="Address1">
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label">City</label>
+                        <select name="" id="" class="form-select" formControlName="fmCompanyCity"
+                            (change)="onCityChange($event)">
+                            <option value="" selected translate>Select</option>
+                            <!-- <option   *ngFor="let City of Cities" [ngValue]="City.CityID">
                     {{City.CityName}}</option> -->
-            </select>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label">State</label>
-                <input type="text" class="form-control" formControlName ="fmCompanyState" placeholder="State" readonly>
-            </div>
-            <!--row2-->
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label">Pincode</label>
-                <input type="text" class="form-control" formControlName="fmCompanyPinCode" placeholder="Pincode">
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label">Country</label>
-                <!-- <input type="text" class="form-control" placeholder="Country" disabled> 
+                        </select>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label">State</label>
+                        <input type="text" class="form-control" formControlName="fmCompanyState" placeholder="State"
+                            readonly>
+                    </div>
+                    <!--row2-->
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label">Pincode</label>
+                        <input type="text" class="form-control" formControlName="fmCompanyPinCode"
+                            placeholder="Pincode">
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label">Country</label>
+                        <!-- <input type="text" class="form-control" placeholder="Country" disabled> 
 
                 <label for="" class="form-label" translate>Country</label>-->
-                <div class="input-group">
-                    <select name="" id="" class="form-select" formControlName="fmCompanyCountry" 
-                        (change)="onCountryChange($event)">
-                        <option value="" selected translate>Select</option>
-                        <!-- <option *ngFor="let Country of Countries" selected="true" [ngValue]="Country.Id">
+                        <div class="input-group">
+                            <select name="" id="" class="form-select" formControlName="fmCompanyCountry"
+                                (change)="onCountryChange($event)">
+                                <option value="" selected translate>Select</option>
+                                <!-- <option *ngFor="let Country of Countries" selected="true" [ngValue]="Country.Id">
                             {{ Country.Names}}</option> -->
-                    </select>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label" required>Phone No.</label>
+                        <input type="text" class="form-control" formControlName="fmCompanyPhone"
+                            placeholder="Phone No.">
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label">Mobile No.</label>
+                        <input type="text" class="form-control" formControlName="fmCompanyMobile"
+                            placeholder="Mobile No" readonly>
+                    </div>
+
+                    <!--row3-->
+
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label" required>Fax No.</label>
+                        <input type="text" class="form-control" formControlName="fmCompanyFax" placeholder="Fax No">
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label" required>Email</label>
+                        <input type="text" class="form-control" formControlName="fmCompanyEmail" placeholder="Email">
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label" required>Nphies License No.</label>
+                        <input type="text" class="form-control" formControlName="fmCompanyLicenseNo"
+                            placeholder="License No." readonly>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <label for="" class="form-label">Credit Days</label>
+                        <input type="text" class="form-control" formControlName="fmCompanyCreditDays"
+                            placeholder="Credit Days">
+                    </div>
+
+                    <!--row4-->
+
                 </div>
 
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label" required>Phone No.</label>
-                <input type="text" class="form-control" formControlName="fmCompanyPhone" placeholder="Phone No.">
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label">Mobile No.</label>
-                <input type="text" class="form-control" formControlName="fmCompanyMobile" placeholder="Mobile No" readonly>
-            </div>
-
-            <!--row3-->
-
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label" required>Fax No.</label>
-                <input type="text" class="form-control" formControlName="fmCompanyFax" placeholder="Fax No">
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label" required>Email</label>
-                <input type="text" class="form-control" formControlName="fmCompanyEmail" placeholder="Email">
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label" required>Nphies License No.</label>
-                <input type="text" class="form-control" formControlName="fmCompanyLicenseNo" placeholder="License No." readonly>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <label for="" class="form-label">Credit Days</label>
-                <input type="text" class="form-control" formControlName="fmCompanyCreditDays" placeholder="Credit Days">
-            </div>
-
-            <!--row4-->
-            
-        </div>
 
 
-
+            </div>
+        </form>
     </div>
-</form>
-    </div>
-    
+
 </div>
-
-
-
-
-
-
-
-
-
-<!--Javascript-->
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-

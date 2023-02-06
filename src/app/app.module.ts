@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClient,HttpClientModule } from '@angular/common/http';
+import { HttpClient,HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -16,6 +16,7 @@ import { MultiTranslateHttpLoader } from "ngx-translate-multi-http-loader";
 import { CompanyComponent } from './contract-management/company/company.component';
 import { CompanyConfigurationComponent } from './contract-management/company-configuration/company-configuration.component';
 import { PaymentComponent } from './contract-management/payment/payment.component';
+import { HeadersInterceptor } from './Interceptor/headers.interceptor';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new MultiTranslateHttpLoader(http, [
@@ -47,7 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     })
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, {provide: HTTP_INTERCEPTORS, useClass: HeadersInterceptor, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

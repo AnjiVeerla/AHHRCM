@@ -8,16 +8,8 @@ import { Observable, throwError } from 'rxjs';
 })
 export class OpbillingService {
 
-  public httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      Authorization: 'Basic ' + btoa('admin' + ':' + '123456'),
-    }),
-  };
+  constructor(private ConfigService: ConfigService, private http: HttpClient) {
 
-  constructor(private ConfigService: ConfigService, private http: HttpClient) { 
-    
   }
   fetchPatientData(patientData: any) {
     let data = {
@@ -28,32 +20,20 @@ export class OpbillingService {
       WORKSTATIONID: 0,
       LanguageID: 0,
     };
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + 'FetchPatientData',
-      data,
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchPatientData', data);
   }
   getAllServices() {
     let data = {
-      type : "2"
+      type: "2"
     }
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + 'HospitalServices',
-      data,
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + 'HospitalServices', data);
   }
   fetchConsultants(serviceID: any, serviceType: any) {
     let data = {
       //ServiceID : serviceID,
       name: serviceType
     }
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + 'FetchConsultants',
-      data,
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchConsultants', data);
   }
   validateRegCode(regCode: any) {
     let data = {
@@ -62,11 +42,7 @@ export class OpbillingService {
       UserID: 4393,
       WorkStationID: 3392
     }
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + 'ValidationRegCode',
-      data,
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + 'ValidationRegCode',data);
   }
   FetchServicePrice(serviceId: any, serviceTypeId: any, TariffId: any, VisitType: any, SpecialisationId: any, bedType: any) {
     let data = {
@@ -79,20 +55,16 @@ export class OpbillingService {
       UserID: 4393,
       WorkStationID: 3392
     }
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + 'FetchServicePrice',
-      data,
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchServicePrice', data);
   }
-  getPayment(outPatientBill:any): Observable<any> {
+  getPayment(outPatientBill: any): Observable<any> {
     var billingApiEndpoint = `http://172.18.17.219/rcmapicore/` + "OutPatientBillingCashCredit/";
     return this.http
-        .post(billingApiEndpoint + `Payment`, outPatientBill);        
+      .post(billingApiEndpoint + `Payment`, outPatientBill);
   }
-  saveBill(saveBill:any): Observable<any> {
+  saveBill(saveBill: any): Observable<any> {
     var billingApiEndpoint = `http://172.18.17.219/rcmapicore/` + "OutPatientBillingCashCredit/";
     return this.http
-        .post(billingApiEndpoint + `SaveBill`,saveBill)
+      .post(billingApiEndpoint + `SaveBill`, saveBill)
   }
 }

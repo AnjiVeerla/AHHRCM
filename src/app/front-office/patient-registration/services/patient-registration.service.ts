@@ -11,14 +11,7 @@ export class PatientRegistrationService {
   public reqToGetPatientData: any;
   private isFetchPatientData = new BehaviorSubject<boolean>(false);
   private FetchPatientData = new BehaviorSubject<boolean>(false);
-
-  public httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      Authorization: 'Basic ' + btoa('admin' + ':' + '123456'),
-    }),
-  };
+ 
   
   
   FetchHospitalSpecialisations: any = this.ConfigService.apiUrl + 'FetchHospitalSpecialisations';
@@ -50,18 +43,14 @@ export class PatientRegistrationService {
     return this.FetchPatientData.asObservable();
   }
   getPatientRegMasterData(data: any) {
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + 'GetPatientRegMasterData',
-      data,
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + 'GetPatientRegMasterData', data);
   }
   FetchNationalitiesPriority() {
     let data = {
         NationalityID: 0    
     };
     return this.http.post<any>(
-      this.ConfigService.apiUrl + 'FetchNationalitiesPriority', data, this.httpOptions);
+      this.ConfigService.apiUrl + 'FetchNationalitiesPriority', data);
   }
   savePatientData(data: any, isFetchPatientdata: boolean) {
     let saveAndUpdate = "";
@@ -70,30 +59,18 @@ export class PatientRegistrationService {
     } else {
       saveAndUpdate = 'UpdatePatientData'
     }
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + `${saveAndUpdate}`,
-      data,
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + `${saveAndUpdate}`,data);
   }
 
   fetchCityArea(cityArea: any) {
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + 'FetchCityArea',
-      cityArea,
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchCityArea',cityArea);
   }
   fetchPatientRoot(patientRoot: any) {
     let data = {
       RegCode: patientRoot,
     };
     console.log(data);
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + 'FetchPatientRoot',
-      data,
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchPatientRoot', data);
   }
 
   fetchPatientData(patientData: any) {
@@ -105,11 +82,7 @@ export class PatientRegistrationService {
       WORKSTATIONID: 0,
       LanguageID: 0,
     };
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + 'FetchPatientData',
-      data,
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchPatientData',data);
   }
   fetchPatientModifications(patientData: any, FromDate: any, ToDate: any) {
     let data = {
@@ -117,69 +90,53 @@ export class PatientRegistrationService {
       FromDate: FromDate,
       ToDate: ToDate,
     };
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + 'FetchPatientModificationAudit',
-      data,
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchPatientModificationAudit',data);
   }
   fetchAllCities() {
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + 'FetchAllCities',
-      {},
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchAllCities',{});
   }
   fetchAge(dob: string) {
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + 'FetchAgeCalculate',
-      { dob },
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchAgeCalculate',{ dob });
   }
   fetchDOBByAge(age: number, ageUomid: number) {
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + 'FetchDOB',
-      { age, ageUomid },
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchDOB',{ age, ageUomid });
   }
   // Doctor Availability 
   // Specialisation http://172.18.17.219/DEVAPI/API/FetchHospitalSpecialisations
   getSpecialisation(reqData: any){
-    return this.http.post<any>(this.FetchHospitalSpecialisations,reqData,this.httpOptions);
+    return this.http.post<any>(this.FetchHospitalSpecialisations,reqData);
   }
 
   // Doctor availability http://172.18.17.219/DEVAPI/API/FetchHospitalDoctors
   getDoctor(reqData: any){
-    return this.http.post<any>(this.FetchHospitalDoctors,reqData,this.httpOptions);
+    return this.http.post<any>(this.FetchHospitalDoctors,reqData);
   }
 
   // specialisationwise Data population http://172.18.17.219/DEVAPI/API/CurrentDayDoctorSpecAvailability
   getSpecialisationData(reqData: any){
-    return this.http.post<any>(this.CurrentDayDoctorSpecAvailability,reqData,this.httpOptions);
+    return this.http.post<any>(this.CurrentDayDoctorSpecAvailability,reqData);
   }  
 
   // Specialisation and doctor combination Data Selection http://172.18.17.219/DEVAPI/API/FetchDoctorWiseAvailability
   getDoctorData(reqData: any){
-    return this.http.post<any>(this.FetchDoctorWiseAvailability,reqData,this.httpOptions);
+    return this.http.post<any>(this.FetchDoctorWiseAvailability,reqData);
   }
 
   fetchCity(country: any){
     let inputData = {
       CountryID: country
     };
-    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchCityMasters', inputData,this.httpOptions);
+    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchCityMasters', inputData);
   }
 
   // Hijri Date fetching http://172.18.17.219/DEVAPI/API/FetchHijri
   getHijriDate(reqData: any){
-    return this.http.post<any>(this.FetchHijri,reqData,this.httpOptions);
+    return this.http.post<any>(this.FetchHijri,reqData);
   }
 
   // English Date fetching http://172.18.17.219/DEVAPI/API/FetchEnglishDate
   getEnglishDate(reqData: any){
-    return this.http.post<any>(this.FetchEnglishDate,reqData,this.httpOptions);
+    return this.http.post<any>(this.FetchEnglishDate,reqData);
   }
   getPatientName2l(name2L: any){
     let inputData = {
@@ -187,7 +144,7 @@ export class PatientRegistrationService {
       name: name2L,
       languageID: 0,
     };
-    return this.http.post<any>(this.ConfigService.apiUrl + 'PATIENTDICTIONARY',inputData,this.httpOptions);
+    return this.http.post<any>(this.ConfigService.apiUrl + 'PATIENTDICTIONARY',inputData);
   }
   upload(file:any) {
       const formData = new FormData(); 
@@ -205,28 +162,21 @@ export class PatientRegistrationService {
       Base64: file,
       FileName: filename      
     };
-    return this.http.post<any>(
-      this.ConfigService.apiUrl + 'FileUpload',
-      inputData,
-      this.httpOptions
-    );
+    return this.http.post<any>(this.ConfigService.apiUrl + 'FileUpload',inputData);
   }
   DownloadProfilePhoto(fileName: string) {
     let input = {
       fileName: fileName,
     };
-    return this.http.get<any>(
-      this.ConfigService.apiUrl + 'FileDownload?fileName='+fileName,
-      this.httpOptions
-    );
+    return this.http.get<any>(this.ConfigService.apiUrl + 'FileDownload?fileName='+fileName);
   }
   FetchAllEmployees(reqData: any){
-    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchAllEmployees',reqData,this.httpOptions);
+    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchAllEmployees',reqData);
   }
   FetchEmployee(reqData: any){
-    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchEmployee',reqData,this.httpOptions);
+    return this.http.post<any>(this.ConfigService.apiUrl + 'FetchEmployee',reqData);
   }
   fetchPatientInfoByYakeenService(iqamaNumber: string, dateOfBirth: any) {
-    return this.http.get<any>(this.ConfigService.apiUrl+ '/PatientInfoByYakeenService?iqamaNumber='+ iqamaNumber +'&dateOfBirth='+ dateOfBirth+'', this.httpOptions);
+    return this.http.get<any>(this.ConfigService.apiUrl+ '/PatientInfoByYakeenService?iqamaNumber='+ iqamaNumber +'&dateOfBirth='+ dateOfBirth+'');
   }
 }

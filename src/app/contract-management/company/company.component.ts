@@ -1,44 +1,46 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ContractmanagementService } from '../services/contractmanagement.service';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ContractmanagementService } from '../services/Contract-Management.service';
+
 
 @Component({
   selector: 'app-company',
   templateUrl: './company.component.html',
   styleUrls: ['./company.component.scss']
 })
+
 export class CompanyComponent implements OnInit {
-  CompanyTypes:any;
-  Countries: any;
-  Cities: any;
-  
   companyForm!: FormGroup;
-  constructor(private formBuilder:FormBuilder, private contractService:ContractmanagementService) { }
+  CompanyTypes: any;
+
+  constructor(
+    public fb: FormBuilder,
+    public service: ContractmanagementService
+  ) { }
 
   ngOnInit(): void {
     this.loadCompanyMasterForm();
-    this.loadCompanyTypes();    
+    this.loadCompanyTypes();
   }
 
-  loadCompanyMasterForm():void{
-this.companyForm=this.formBuilder.group({
-  fmCompanyCreditDays:'',
-  fmCompanyLicenseNo:'',
-  fmCompanyEmail:'',
-  fmCompanyFax:'',
-  fmCompanyMobile:'',
-  fmCompanyPhone:'',
-  fmCompanyCountry:'',
-  fmCompanyPinCode:'',
-  fmCompanyState:'',
-  fmCompanyCity:'',
-  fmCompanyAddress1:'',
-  fmCompanyAddress:'',
-  fmCompanyName:'',
-  fmCompanyType:'',
-  fmCompanyCode:'',
-
-});
+  loadCompanyMasterForm(): void {
+    this.companyForm = this.fb.group({
+      fmCompanyCreditDays: new FormControl(''),
+      fmCompanyLicenseNo: new FormControl(''),
+      fmCompanyEmail: new FormControl(''),
+      fmCompanyFax: new FormControl(''),
+      fmCompanyMobile: new FormControl(''),
+      fmCompanyPhone: new FormControl(''),
+      fmCompanyCountry: new FormControl(''),
+      fmCompanyPinCode: new FormControl(''),
+      fmCompanyState: new FormControl(''),
+      fmCompanyCity: new FormControl(''),
+      fmCompanyAddress1: new FormControl(''),
+      fmCompanyAddress: new FormControl(''),
+      fmCompanyName: new FormControl(''),
+      fmCompanyType: new FormControl(''),
+      fmCompanyCode: new FormControl(''),
+    });
   }
 
 
@@ -56,13 +58,13 @@ this.companyForm=this.formBuilder.group({
     //this.companyForm.get('fmCompanyCity')?.setValue(event.target.options[event.target.options.selectedIndex].text);
   }
 
-  saveCompany()
-  {
+  saveCompany() {
 
   }
 
-  loadCompanyTypes()
-  {
-      this.CompanyTypes=this.contractService.getCompanyTypes();
+  loadCompanyTypes() {
+    this.CompanyTypes = this.service.getCompanyTypes();
   }
+
+
 }
