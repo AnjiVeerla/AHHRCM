@@ -7,6 +7,7 @@ import { OPBillingModule } from './front-office/opbilling/opbilling.module';
 import { CompanyComponent } from './contract-management/company/company.component';
 import { PaymentComponent } from './contract-management/payment/payment.component';
 import { CompanyConfigurationComponent } from './contract-management/company-configuration/company-configuration.component';
+import { SinglefieldComponent } from './admin/singlefield/singlefield.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'company-configuration',
     component:CompanyConfigurationComponent
+  }, 
+  {
+    path: 'single-field',
+    component:SinglefieldComponent
   }, 
   {
     path: 'payment',
