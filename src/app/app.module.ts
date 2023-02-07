@@ -18,6 +18,7 @@ import { CompanyConfigurationComponent } from './contract-management/company-con
 import { PaymentComponent } from './contract-management/payment/payment.component';
 import { HeadersInterceptor } from './Interceptor/headers.interceptor';
 import { SinglefieldComponent } from './admin/singlefield/singlefield.component';
+import { AlertPopupComponent } from './shared/alert-popup/alert-popup.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new MultiTranslateHttpLoader(http, [
@@ -33,7 +34,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     CompanyComponent,
     CompanyConfigurationComponent,
     PaymentComponent,
-    SinglefieldComponent
+    SinglefieldComponent,
+    AlertPopupComponent
   ],
   imports: [
     BrowserModule,

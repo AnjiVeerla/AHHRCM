@@ -1,0 +1,53 @@
+<div class="modal fade" data-bs-backdrop="static" id="alertSuccessPopupModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-toast modal-toast-success">
+        <div class="modal-content">
+
+            <img class="modal-header-icon" src="assets/images/icons/toast-success.svg" alt="">
+            <div class="modal-body">
+                <h3 translate>Success</h3>
+                <p translate>{{resultMessage}}</p>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-main-outline" (click)="closeSuccessModalPopup()">Ok</button>                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" data-bs-backdrop="static" id="alertErrorPopUpModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-toast modal-toast-success">
+        <div class="modal-content">
+            <!-- <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="closeErrorPopup()"></button>
+            </div> -->
+            <img class="modal-header-icon" src="assets/images/icons/toast-error.svg" alt="">
+            <div class="modal-body">
+                <h3 translate>Alert</h3>
+                <p translate>{{resultMessage}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger-outline" #closebutton data-bs-dismiss="modal"
+                    (click)="closeErrorModalPopup()" aria-label="Close" translate>Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" data-bs-backdrop="static" id="infoMessagePopupModal" tabindex="-1" >
+    <div class="modal-dialog modal-dialog-centered modal-toast modal-toast-success">
+        <div class="modal-content">
+            <img class="modal-header-icon" src="assets/images/icons/toast-info.svg" alt="">
+            <div class="modal-body">
+                <h3 translate>Alert</h3>
+                <p translate>{{ resultMessage }}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger-outline" #closebutton data-bs-dismiss="modal"
+                    (click)="closeInfoModalpopup()" aria-label="Close" translate>Close</button>
+            </div>
+        </div>
+    </div>
+</div>
