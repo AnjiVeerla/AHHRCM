@@ -8,7 +8,7 @@
                 <button class="btn btn-main-outline">Company Documents</button>
                 <button class="btn btn-main-outline">Clear</button>
                 <button class="btn btn-main-outline">Modify</button>
-                <button class="btn btn-main-outline">Save</button>
+                <button class="btn btn-main-outline" (click)="saveCompanyDetails()">Save</button>
             </div>
         </div>
 
@@ -83,6 +83,7 @@
                         </div>
 
                         <div class="col-lg-8">
+                            <form [formGroup]="companyDetails">
                             <div class="accordion card-3d" id="contract">
                                 <div class="accordion-item border-0">
                                     <div class="page-header card-3d-header" data-bs-toggle="collapse"
@@ -105,72 +106,81 @@
                                                 <div class="col-md-4">
                                                     <div class="">
                                                         <label for="" class="form-label">Contract date</label>
-                                                        <input type="date" class="form-control">
+                                                        <input type="date" class="form-control" name="contractDate" formControlName="contractDate">
                                                     </div>
+                                                    <span class="text-danger" *ngIf="submitted && companyDetails.get('contractDate')?.invalid ">This field is required</span>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="">
                                                         <label for="" class="form-label">Valid from</label>
-                                                        <input type="date" class="form-control">
+                                                        <input type="date" class="form-control"  name="validFrom" formControlName="validFrom">
+                                                        <span class="text-danger" *ngIf="submitted && companyDetails.get('validFrom')?.invalid ">This field is required</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="">
                                                         <label for="" class="form-label">Valid to</label>
-                                                        <input type="date" class="form-control">
+                                                        <input type="date" class="form-control"  name="validTo" formControlName="validTo">
+                                                        <span class="text-danger" *ngIf="submitted && companyDetails.get('validTo')?.invalid ">This field is required</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="">
                                                         <label for="" class="form-label">Credit limit</label>
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" name="cardLimit" formControlName="cardLimit">
+                                                        <span class="text-danger" *ngIf="submitted && companyDetails.get('cardLimit')?.invalid ">This field is required</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="">
                                                         <label for="" class="form-label">Credit Balance</label>
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" name="creditBalence" formControlName="creditBalence">
+                                                        <span class="text-danger" *ngIf="submitted && companyDetails.get('creditBalence')?.invalid ">This field is required</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="">
                                                         <label for="" class="form-label">Vat Number</label>
-                                                        <input type="text" class="form-control">
+                                                        <input type="text" class="form-control" name="vatNumber" formControlName="vatNumber">
+                                                        <span class="text-danger" *ngIf="submitted && companyDetails.get('vatNumber')?.invalid ">This field is required</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-8">
                                                     <div class="d-flex align-items-center">
                                                         <div class="d-flex align-items-center">
                                                             <input class="form-check-input mt-0 me-2" type="checkbox"
-                                                                value="" id="">
+                                                                value="" id="" name="approvalNotApplicable" formControlName="approvalNotApplicable">
                                                             <label class="form-label m-0 pe-2">Approval Not
                                                                 Applicable</label>
                                                         </div>
                                                         <div class="d-flex align-items-center">
                                                             <input class="form-check-input mt-0 me-2" type="checkbox"
-                                                                value="" id="">
+                                                                value="" id="" name="UAF" formControlName="UAF">
                                                             <label class="form-label m-0 pe-2">UAF</label>
                                                         </div>
                                                         <div class="d-flex align-items-center">
                                                             <input class="form-check-input mt-0 me-2" type="checkbox"
-                                                                value="" id="">
+                                                                value="true" id="" name="approvalRequired" formControlName="approvalRequired">
                                                             <label class="form-label m-0 pe-2">Approval Required</label>
                                                         </div>
                                                     </div>
+                                                    <span class="text-danger" *ngIf="submitted && companyDetails.get('approvalRequired')?.invalid ">This field is required</span>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="d-flex align-items-center">
                                                         <input class="form-check-input mt-0 me-2" type="checkbox"
-                                                            value="" id="">
+                                                            value="" id=""  >
                                                         <label class="form-label m-0 pe-2 text-nowrap">Policy No.
                                                             *</label>
-                                                        <input type="text" class="form-control w-25">
+                                                        <input type="text" class="form-control w-25" name="policyNumber" formControlName="policyNumber">
+                                                        <span class="text-danger" *ngIf="submitted && companyDetails.get('policyNumber')?.invalid ">This field is required</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="">
                                                         <label for="" class="form-label">Basic Rules</label>
-                                                        <textarea type="text" class="form-control"></textarea>
+                                                        <textarea type="text" class="form-control"  name="basicRules" formControlName="basicRules"></textarea>
+                                                        <span class="text-danger" *ngIf="submitted && companyDetails.get('basicRules')?.invalid ">This field is required</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -196,7 +206,7 @@
                                     <div id="invoiceBody"
                                         class="accordion-collapse collapse show position-relative invoiceBody"
                                         aria-labelledby="headingOne" data-bs-parent="#invoiceBody">
-                                        <div class="card-3d-body p-3">
+                                        <div class="card-3d-body p-3" formGroupName="invoiceProcessDetails" >
                                             <div class="row g-3">
                                                 <div class="col-md-6">
                                                     <div class="card h-100 p-3">
@@ -204,19 +214,19 @@
                                                             <label for="" required=""
                                                                 class="form-label">Insurance</label>
                                                             <div class="d-flex align-items-center">
-                                                                <div
-                                                                    class="d-flex align-items-center input-group w-50 me-3">
+                                                                <div class="d-flex align-items-center input-group w-50 me-3">
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="" aria-label="">
+                                                                        placeholder="" aria-label="" name="insurence" formControlName="insurence">
                                                                     <button class="btn btn-secondary-fill btn-icon"
                                                                         type="button" id="">
                                                                         <img src="assets/images/icons/icon-search.svg"
                                                                             alt="">
                                                                     </button>
                                                                 </div>
+                                                                <span class="text-danger" *ngIf="submitted && invoiceProcessDetailsData.get('insurence')?.invalid ">This field is required</span>
                                                                 <div class="d-flex align-items-center">
                                                                     <input class="form-check-input mt-0 me-2"
-                                                                        type="checkbox" value="" id="">
+                                                                        type="checkbox" value="" id="" name="selfInsurence" formControlName="selfInsurence">
                                                                     <label class="form-label m-0 pe-2">Self
                                                                         Insurance</label>
                                                                 </div>
@@ -225,50 +235,51 @@
                                                         <div class="mb-3">
                                                             <label for="" required="" class="form-label">TPA</label>
                                                             <div class="d-flex align-items-center">
-                                                                <div
-                                                                    class="d-flex align-items-center input-group w-50 me-3">
+                                                                <div class="d-flex align-items-center input-group w-50 me-3">
                                                                     <input type="text" class="form-control"
-                                                                        placeholder="" aria-label="">
+                                                                        placeholder="" aria-label="" name="TPA" formControlName="TPA">
                                                                     <button class="btn btn-secondary-fill btn-icon"
                                                                         type="button" id="">
                                                                         <img src="assets/images/icons/icon-search.svg"
                                                                             alt="">
                                                                     </button>
                                                                 </div>
+                                                                <span class="text-danger" *ngIf="submitted && invoiceProcessDetailsData.get('TPA')?.invalid ">This field is required</span>
                                                                 <div class="d-flex align-items-center">
                                                                     <input class="form-check-input mt-0 me-2"
-                                                                        type="checkbox" value="" id="">
+                                                                        type="checkbox" value="" id="" name="selfTPA" formControlName="selfTPA">
                                                                     <label class="form-label m-0 pe-2">Self TPA</label>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="mb-3">
-                                                            <label for="" required=""
-                                                                class="form-label">Template</label>
+                                                            <label for="" required="" class="form-label">Template</label>
                                                             <div class="d-flex align-items-center input-group w-50">
-                                                                <input type="text" class="form-control" placeholder=""
-                                                                    aria-label="">
+                                                                <input type="text" class="form-control" placeholder="Template"
+                                                                    aria-label="" name="template" formControlName="template">
                                                                 <button class="btn btn-secondary-fill btn-icon"
                                                                     type="button" id="">
                                                                     <img src="assets/images/icons/icon-search.svg"
                                                                         alt="">
                                                                 </button>
                                                             </div>
+                                                            <span class="text-danger" *ngIf="submitted && invoiceProcessDetailsData.get('template')?.invalid ">This field is required</span>
                                                         </div>
                                                         <div class="d-flex align-items-center">
                                                             <div class="d-flex align-items-center">
                                                                 <input class="form-check-input mt-0 me-2"
-                                                                    type="checkbox" value="" id="">
+                                                                    type="checkbox" value="true" id="" name="discountOnCashForOP" formControlName="discountOnCashForOP">
                                                                 <label class="form-label m-0 pe-2">Discount on Cash for
                                                                     OP</label>
                                                             </div>
                                                             <div class="d-flex align-items-center">
                                                                 <input class="form-check-input mt-0 me-2"
-                                                                    type="checkbox" value="" id="">
+                                                                    type="checkbox" value="true" id=""  name="discountOnCashForIP" formControlName="discountOnCashForIP">
                                                                 <label class="form-label m-0 pe-2">Discount on Cash for
                                                                     IP</label>
                                                             </div>
                                                         </div>
+                                                        <span class="text-danger" *ngIf="submitted && invoiceProcessDetailsData.get('discountOnCashForIP')?.invalid ">This field is required</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -281,8 +292,9 @@
                                                                     Patients/Day</label>
                                                             </div>
                                                             <input type="text" class="form-control w-25" placeholder=""
-                                                                aria-label="">
+                                                                aria-label=""  name="noOfOpPatientsDay" formControlName="noOfOpPatientsDay">
                                                         </div>
+                                                        <span class="text-danger" *ngIf="submitted && invoiceProcessDetailsData.get('noOfOpPatientsDay')?.invalid ">This field is required</span>
                                                         <div class="d-flex align-items-center mb-3">
                                                             <div class="d-flex align-items-center w-50">
                                                                 <input class="form-check-input mt-0 me-2"
@@ -291,8 +303,9 @@
                                                                     Patients/Day</label>
                                                             </div>
                                                             <input type="text" class="form-control w-25" placeholder=""
-                                                                aria-label="">
+                                                                aria-label=""  name="noOfIpPatientsDay" formControlName="noOfIpPatientsDay">
                                                         </div>
+                                                        <span class="text-danger" *ngIf="submitted && invoiceProcessDetailsData.get('noOfIpPatientsDay')?.invalid ">This field is required</span>
                                                         <div class="d-flex align-items-center mb-3">
                                                             <div class="d-flex align-items-center w-50">
                                                                 <!-- <input class="form-check-input mt-0 me-2" type="checkbox" value="" id=""> -->
@@ -300,17 +313,20 @@
                                                                     Patient Per Day</label>
                                                             </div>
                                                             <input type="text" class="form-control w-25" placeholder=""
-                                                                aria-label="">
+                                                                aria-label="" name="consultationPerPatientPerDay" formControlName="consultationPerPatientPerDay">
                                                         </div>
+                                                        <span class="text-danger" *ngIf="submitted && invoiceProcessDetailsData.get('consultationPerPatientPerDay')?.invalid ">This field is required</span>
                                                         <div class="d-flex align-items-center mb-3">
                                                             <div class="d-flex align-items-center w-50">
                                                                 <!-- <input class="form-check-input mt-0 me-2" type="checkbox" value="" id=""> -->
                                                                 <label class="form-label m-0 pe-2">Fixed Consultation
                                                                     Charges</label>
                                                             </div>
-                                                            <input type="text" class="form-control w-25" placeholder=""
-                                                                aria-label="">
+                                                            <input type="text" class="form-control w-25" placeholder="Fixed Consultation
+                                                                Charges"
+                                                                aria-label="" name="fixedConsultationCharges" formControlName="fixedConsultationCharges">
                                                         </div>
+                                                        <span class="text-danger" *ngIf="submitted && invoiceProcessDetailsData.get('fixedConsultationCharges')?.invalid ">This field is required</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
@@ -321,21 +337,22 @@
                                                                 <div class="d-flex align-items-center">
                                                                     <div class="d-flex align-items-center">
                                                                         <input class="form-check-input mt-0 me-2"
-                                                                            type="radio" value="" id="">
+                                                                            type="radio" value="invoicesDirect" id="" name="invoicesDirect" formControlName="invoicesDirect">
                                                                         <label
                                                                             class="form-label m-0 pe-2">Direct</label>
                                                                     </div>
                                                                     <div class="d-flex align-items-center">
                                                                         <input class="form-check-input mt-0 me-2"
-                                                                            type="radio" value="" id="">
+                                                                            type="radio" value="invoicesInsurence" id="" name="invoicesDirect" formControlName="invoicesDirect">
                                                                         <label
                                                                             class="form-label m-0 pe-2">Insurance</label>
                                                                     </div>
                                                                     <div class="d-flex align-items-center">
                                                                         <input class="form-check-input mt-0 me-2"
-                                                                            type="radio" value="" id="">
+                                                                            type="radio" value="invoicesTPA" id="" name="invoicesDirect" formControlName="invoicesDirect">
                                                                         <label class="form-label m-0 pe-2">TPA</label>
                                                                     </div>
+                                                                    <span class="text-danger" *ngIf="submitted && invoiceProcessDetailsData.get('invoicesDirect')?.invalid ">This field is required</span>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4">
@@ -344,21 +361,22 @@
                                                                 <div class="d-flex align-items-center">
                                                                     <div class="d-flex align-items-center">
                                                                         <input class="form-check-input mt-0 me-2"
-                                                                            type="radio" value="" id="">
+                                                                            type="radio" value="coveringLetterDirect" id="" name="coveringLetterDirect" formControlName="coveringLetterDirect">
                                                                         <label
                                                                             class="form-label m-0 pe-2">Direct</label>
                                                                     </div>
                                                                     <div class="d-flex align-items-center">
                                                                         <input class="form-check-input mt-0 me-2"
-                                                                            type="radio" value="" id="">
+                                                                            type="radio" value="coveringLetterInsurance" id="" name="coveringLetterDirect" formControlName="coveringLetterDirect">
                                                                         <label
                                                                             class="form-label m-0 pe-2">Insurance</label>
                                                                     </div>
                                                                     <div class="d-flex align-items-center">
                                                                         <input class="form-check-input mt-0 me-2"
-                                                                            type="radio" value="" id="">
+                                                                            type="radio" value="coveringLetterTPA" id="" name="coveringLetterDirect" formControlName="coveringLetterDirect">
                                                                         <label class="form-label m-0 pe-2">TPA</label>
                                                                     </div>
+                                                                    <span class="text-danger" *ngIf="submitted && invoiceProcessDetailsData.get('coveringLetterDirect')?.invalid ">This field is required</span>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4">
@@ -367,21 +385,22 @@
                                                                 <div class="d-flex align-items-center">
                                                                     <div class="d-flex align-items-center">
                                                                         <input class="form-check-input mt-0 me-2"
-                                                                            type="radio" value="" id="">
+                                                                            type="radio" value="summaryDetailsDirect" id=""  name="summaryDetailsDirect" formControlName="summaryDetailsDirect">
                                                                         <label
                                                                             class="form-label m-0 pe-2">Direct</label>
                                                                     </div>
                                                                     <div class="d-flex align-items-center">
                                                                         <input class="form-check-input mt-0 me-2"
-                                                                            type="radio" value="" id="">
+                                                                            type="radio" value="summaryDetailsInsurance" id="" name="summaryDetailsDirect" formControlName="summaryDetailsDirect">
                                                                         <label
                                                                             class="form-label m-0 pe-2">Insurance</label>
                                                                     </div>
                                                                     <div class="d-flex align-items-center">
                                                                         <input class="form-check-input mt-0 me-2"
-                                                                            type="radio" value="" id="">
+                                                                            type="radio" value="summaryDetailsTPA" id="" name="summaryDetailsDirect" formControlName="summaryDetailsDirect">
                                                                         <label class="form-label m-0 pe-2">TPA</label>
                                                                     </div>
+                                                                    <span class="text-danger" *ngIf="submitted && invoiceProcessDetailsData.get('summaryDetailsDirect')?.invalid ">This field is required</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -410,35 +429,38 @@
                                     <div id="paymentBody"
                                         class="accordion-collapse collapse show position-relative paymentBody"
                                         aria-labelledby="headingOne" data-bs-parent="#paymentBody">
-                                        <div class="card-3d-body p-3">
+                                        <div class="card-3d-body p-3" formGroupName="paymentDetails" >
                                             <div class="row g-3 align-items-center">
                                                 <div class="col-md-6">
                                                     <p class="m-0">Days waiting for confirmation from company on
                                                         submission for coverage letter</p>
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <input type="text" value="45" class="form-control">
+                                                    <input type="text"  class="form-control" name="paymentDueDate1" formControlName="paymentDueDate1">
                                                 </div>
+                                                <span class="text-danger" *ngIf="submitted && paymentDetailsData.get('paymentDueDate1')?.invalid ">This field is required</span>
                                                 <div class="col-md-6">
                                                     <p class="m-0">Days waiting for confirmation from company on
                                                         submission for coverage for renconciliation</p>
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <input type="text" value="45" class="form-control">
+                                                    <input type="text"  class="form-control" name="paymentDueDate2" formControlName="paymentDueDate2">
                                                 </div>
-
+                                                <span class="text-danger" *ngIf="submitted && paymentDetailsData.get('paymentDueDate2')?.invalid ">This field is required</span>
                                                 <div class="col-md-6">
                                                     <p class="m-0">Days waiting for payment from company on completing
                                                         of renconciliation</p>
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <input type="text" value="45" class="form-control">
+                                                    <input type="text"  class="form-control" name="paymentDueDate3" formControlName="paymentDueDate3">
                                                 </div>
+                                                <span class="text-danger" *ngIf="submitted && paymentDetailsData.get('paymentDueDate3')?.invalid ">This field is required</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -475,3 +497,4 @@
         </div>
     </div>
 </div>
+

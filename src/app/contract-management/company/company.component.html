@@ -9,7 +9,7 @@
                 <button class="btn btn-main-outline">Confiuration</button>
                 <button class="btn btn-main-outline">Map Location</button>
                 <button class="btn btn-main-outline">Clear</button>
-                <button class="btn btn-main-fill">Save</button>
+                <button class="btn btn-main-fill">Save12</button>
             </div>
         </div>
         <form [formGroup]="companyForm">
@@ -37,10 +37,12 @@
                         <div class="input-group">
                             <input type="text" class="form-control" formControlName="fmCompanyName"
                                 placeholder="Company Name Search">
-                            <button class="btn btn-secondary-fill btn-icon" type="button" id="button-addon2">
+                            <button class="btn btn-secondary-fill btn-icon" type="button" id="button-addon2"
+                                (click)="getSearchData()">
                                 <img src="assets/images/icons/icon-search.svg" alt="">
                             </button>
                         </div>
+                        <app-auto-seatch #tref></app-auto-seatch>
                     </div>
                 </div>
                 <div class="row py-3 gx-4 gy-3" id="address-details">
@@ -138,11 +140,27 @@
                     <!--row4-->
 
                 </div>
-
-
-
+            </div>
+            <div *ngIf="filterDataList">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr *ngIf="filterDataList">
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of filterDataList; let i=index;">
+                            <td>{{ i+1 }}</td>
+                            <td>{{ p.name }}</td>
+                            <td>{{ p.value }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </form>
     </div>
-
 </div>
+
+

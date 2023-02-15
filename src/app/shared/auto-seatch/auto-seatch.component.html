@@ -1,0 +1,70 @@
+<div bsModal #lgModalChild="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+	aria-labelledby="dialog-sizes-name1">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 id="dialog-sizes-name1" class="modal-title pull-left">Large modal</h4>
+				<button type="button" class="close pull-right" (click)="lgModalChild.hide()" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form [formGroup]="searchForm">
+					<div class="col-md-6">
+						<select class="custom-select" formControlName="searchType1">
+							<option value="S">Starts With</option>
+							<option value="C">Contains</option>
+							<option value="EQ">End With</option>
+						</select> <br><br>
+						<input type="text" class="form-control" id="exampleInputPassword1"
+							formControlName="searchString1" placeholder="Enter Text">
+						<br /><br />
+						<select class="custom-select" formControlName="searchType2">
+							<option value="S">Starts With</option>
+							<option value="C">Contains</option>
+							<option value="EQ">End With</option>
+						</select> <br><br>
+						<input type="text" class="form-control" id="exampleInputPassword1"
+							formControlName="searchString2" placeholder="Enter Text">
+						<br /><br />
+						<select class="custom-select" formControlName="searchType3">
+							<option value="S">Starts With</option>
+							<option value="C">Contains</option>
+							<option value="EQ">End With</option>
+						</select> <br><br>
+						<input type="text" class="form-control" formControlName="searchString3"
+							id="exampleInputPassword3" placeholder="Enter Text">
+						<br /><br />
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" (click)="getSearchData()">Save
+								changes</button>
+						</div>
+						<div *ngIf="searchTableData">
+							<table class="table">
+								<thead class="thead-dark">
+									<tr>
+										<th><input type="checkbox" (change)="checkAllCheckBox($event)"></th>
+										<th scope="col">ID</th>
+										<th scope="col">Name</th>
+										<th scope="col">value</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr *ngFor="let p of tableData; let i=index; let odd = odd"
+										[ngClass]="odd ? 'odd_col' : 'even_col'">
+										<td><input type="checkbox" (change)="isAllCheckBoxChecked(i+1, $event)"></td>
+										<td>{{ i+1 }}</td>
+										<td>{{ p.name }}</td>
+										<td>{{ p.value }}</td>
+									</tr>
+								</tbody>
+							</table>
+							<button type="button" class="btn btn-primary" (click)="sendFinalData()">Select</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

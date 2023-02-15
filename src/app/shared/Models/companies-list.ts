@@ -30,3 +30,10 @@ export interface IcompanyInfo {
     CountryName: string;
     CompanyType: string;
 }
+
+
+export interface searchData {
+    type: string; 
+    value: string; 
+    dbFieldName: string
+}

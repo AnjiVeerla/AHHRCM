@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { AutoSeatchComponent } from 'src/app/shared/auto-seatch/auto-seatch.component';
 import { ContractmanagementService } from '../services/Contract-Management.service';
-
+import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-company',
@@ -10,12 +12,19 @@ import { ContractmanagementService } from '../services/Contract-Management.servi
 })
 
 export class CompanyComponent implements OnInit {
+  @ViewChild("tref") tref!: AutoSeatchComponent;
+
   companyForm!: FormGroup;
   CompanyTypes: any;
 
+  bsModalRef!: BsModalRef;
+  filterDataList: any[] = [];
+  subscription!: Subscription;
+
   constructor(
     public fb: FormBuilder,
-    public service: ContractmanagementService
+    public service: ContractmanagementService,
+    public modalService: BsModalService
   ) { }
 
   ngOnInit(): void {
@@ -41,6 +50,12 @@ export class CompanyComponent implements OnInit {
       fmCompanyType: new FormControl(''),
       fmCompanyCode: new FormControl(''),
     });
+
+    this.service.getListData().subscribe((res: any) => {
+      if (res) {
+        this.filterDataList = res;
+      }
+    })
   }
 
 
@@ -66,5 +81,7 @@ export class CompanyComponent implements OnInit {
     this.CompanyTypes = this.service.getCompanyTypes();
   }
 
-
+  getSearchData() {
+    this.tref.show();
+  }
 }

@@ -37,6 +37,7 @@
     "mat-select-search": "^1.2.21",
     "moment": "^2.29.4",
     "moyasar": "^0.5.1",
+    "ngx-bootstrap": "^10.2.0",
     "ngx-mat-select-search": "^4.2.1",
     "ngx-translate-multi-http-loader": "^8.0.2",
     "num-words": "^1.2.2",

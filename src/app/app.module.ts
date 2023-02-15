@@ -19,6 +19,9 @@ import { PaymentComponent } from './contract-management/payment/payment.componen
 import { HeadersInterceptor } from './Interceptor/headers.interceptor';
 import { SinglefieldComponent } from './admin/singlefield/singlefield.component';
 import { AlertPopupComponent } from './shared/alert-popup/alert-popup.component';
+import { AutoSeatchComponent } from './shared/auto-seatch/auto-seatch.component';
+import { ModalModule } from "ngx-bootstrap/modal";
+import { ReactiveFormsModule } from "@angular/forms";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new MultiTranslateHttpLoader(http, [
@@ -35,7 +38,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     CompanyConfigurationComponent,
     PaymentComponent,
     SinglefieldComponent,
-    AlertPopupComponent
+    AlertPopupComponent,
+    AutoSeatchComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +48,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SharedModule,
     BrowserAnimationsModule,
     DatePickerModule,    
+    ReactiveFormsModule, 
+    ModalModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
